@@ -6,9 +6,9 @@ import 'package:expensemanager/shared/shared.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:transparent_image/transparent_image.dart';
+// import 'package:transparent_image/transparent_image.dart';
 
-import '../../shared/expensemanager/expensemanager_appbar.dart';
+// import '../../shared/expensemanager/expensemanager_appbar.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/home';

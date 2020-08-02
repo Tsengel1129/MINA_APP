@@ -1,5 +1,5 @@
-import 'package:expensemanager/screens/Income_expense/incomeexpense.dart';
 import 'package:expensemanager/screens/Wallet/wallet.dart';
+import 'package:expensemanager/screens/categories/categories.dart';
 import 'package:expensemanager/screens/filter/filter.dart';
 import 'package:expensemanager/screens/home/home.dart';
 import 'package:expensemanager/screens/settings/settings.dart';
@@ -21,36 +21,37 @@ class _BottomNavbarState extends State<BottomNavbar> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           IconButton(
-              icon: Icon(Icons.home, size: 30, color: _iconColor),
+              icon: Icon(Icons.home,
+                  size: 30, color: Theme.of(context).accentColor),
               onPressed: () {
                 //home icon -> main.dart
                 Route route =
                     MaterialPageRoute(builder: (context) => HomeScreen());
                 Navigator.push(context, route);
+                /*setState(() {
+                  _iconColor = Theme.of(context).accentColor;
+                });*/
               }),
           //route screens names to main (main)
           IconButton(
-              icon: Icon(Icons.search, size: 30, color: _iconColor),
+              icon: Icon(Icons.category, size: 30, color: _iconColor),
               onPressed: () {
                 Route route =
-                    MaterialPageRoute(builder: (context) => FilterScreen());
+                    MaterialPageRoute(builder: (context) => CategoriesScreen());
                 Navigator.push(context, route);
+                setState(() {
+                  _iconColor = Theme.of(context).accentColor;
+                });
               }),
-          IconButton(
-              icon: Icon(Icons.add_box, size: 30, color: _iconColor),
-              onPressed: () {
-                Route route =
-                    MaterialPageRoute(builder: (context) => IncomeExpense());
-                Navigator.push(context, route);
-              }),
-          IconButton(
+
+          /*IconButton(
               icon: Icon(Icons.account_balance_wallet,
                   size: 30, color: _iconColor),
               onPressed: () {
                 Route route =
                     MaterialPageRoute(builder: (context) => WalletScreen());
                 Navigator.push(context, route);
-              }),
+              }),*/
           IconButton(
               icon: Icon(Icons.settings, size: 30, color: _iconColor),
               onPressed: () {

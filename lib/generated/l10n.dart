@@ -63,20 +63,20 @@ class S {
     );
   }
 
-  /// `{type} ангилал шинээр нэмэх`
+  /// `{type} add new categories`
   String addCategoryBottomSheetHeadingText(Object type) {
     return Intl.message(
-      '$type ангилал шинээр нэмэх',
+      '$type add new categories',
       name: 'addCategoryBottomSheetHeadingText',
       desc: '',
       args: [type],
     );
   }
 
-  /// `Ангиллын нэр`
+  /// `Categories name`
   String get addCategoryBottomSheetLabelTextCategoryName {
     return Intl.message(
-      'Ангиллын нэр',
+      'Categories name',
       name: 'addCategoryBottomSheetLabelTextCategoryName',
       desc: '',
       args: [],
@@ -103,70 +103,70 @@ class S {
     );
   }
 
-  /// `Шинийг нэмэх`
+  /// `ADD`
   String get categoriesScreenButtonTextAddNew {
     return Intl.message(
-      'Шинийг нэмэх',
+      'ADD',
       name: 'categoriesScreenButtonTextAddNew',
       desc: '',
       args: [],
     );
   }
 
-  /// `Ангилал амжилттай устгагдлаа`
+  /// `Categories deleted`
   String get categoriesScreenSnackbarTextDeleteMessage {
     return Intl.message(
-      'Ангилал амжилттай устгагдлаа',
+      'Categories deleted',
       name: 'categoriesScreenSnackbarTextDeleteMessage',
       desc: '',
       args: [],
     );
   }
 
-  /// `Тийм`
+  /// `Yes`
   String get categoriesScreenSnackbarTextResetCategoriesAction {
     return Intl.message(
-      'Тийм',
+      'Yes',
       name: 'categoriesScreenSnackbarTextResetCategoriesAction',
       desc: '',
       args: [],
     );
   }
 
-  /// `Бүх ангиллыг хуучин хэвэнд нь буцаах уу?`
+  /// `Are you sure you want to reset categories?`
   String get categoriesScreenSnackbarTextResetCategoriesConfirmation {
     return Intl.message(
-      'Бүх ангиллыг хуучин хэвэнд нь буцаах уу?',
+      'Are you sure you want to reset categories?',
       name: 'categoriesScreenSnackbarTextResetCategoriesConfirmation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Бүх ангилал амжилттай анхны төлөв рүү буцаагдлаа`
+  /// `Reset successful`
   String get categoriesScreenSnackbarTextResetCategoriesSuccess {
     return Intl.message(
-      'Бүх ангилал амжилттай анхны төлөв рүү буцаагдлаа',
+      'Reset successful',
       name: 'categoriesScreenSnackbarTextResetCategoriesSuccess',
       desc: '',
       args: [],
     );
   }
 
-  /// `Зарлага`
+  /// `Expense`
   String get categoriesScreenTabBarTextExpense {
     return Intl.message(
-      'Зарлага',
+      'Expense',
       name: 'categoriesScreenTabBarTextExpense',
       desc: '',
       args: [],
     );
   }
 
-  /// `Орлого`
+  /// `Income`
   String get categoriesScreenTabBarTextIncome {
     return Intl.message(
-      'Орлого',
+      'Income',
       name: 'categoriesScreenTabBarTextIncome',
       desc: '',
       args: [],
@@ -234,400 +234,400 @@ class S {
     );
   }
 
-  /// `Тийм`
+  /// `Yes`
   String get currenciesScreenSnackbarTextResetCurrenciesAction {
     return Intl.message(
-      'Тийм',
+      'Yes',
       name: 'currenciesScreenSnackbarTextResetCurrenciesAction',
       desc: '',
       args: [],
     );
   }
 
-  /// `Бүх мөнгөн тэмдэгтүүдийг хуучин хэвэнд нь буцаахдаа итгэлтэй байна уу?`
+  /// `Are you sure you want to reset currency?`
   String get currenciesScreenSnackbarTextResetCurrenciesConfirmation {
     return Intl.message(
-      'Бүх мөнгөн тэмдэгтүүдийг хуучин хэвэнд нь буцаахдаа итгэлтэй байна уу?',
+      'Are you sure you want to reset currency?',
       name: 'currenciesScreenSnackbarTextResetCurrenciesConfirmation',
       desc: '',
       args: [],
     );
   }
 
-  /// `Бүх мөнгөн тэмдэгтүүд амжилттай анхны төлөв рүү буцаагдлаа`
+  /// `Reset successful`
   String get currenciesScreenSnackbarTextResetCurrenciesSuccess {
     return Intl.message(
-      'Бүх мөнгөн тэмдэгтүүд амжилттай анхны төлөв рүү буцаагдлаа',
+      'Reset successful',
       name: 'currenciesScreenSnackbarTextResetCurrenciesSuccess',
       desc: '',
       args: [],
     );
   }
 
-  /// `Таны ашиглах мөнгөн тэмдэгт юу вэ?`
+  /// `Please choose your currency`
   String get currencySetupTextHeadline {
     return Intl.message(
-      'Таны ашиглах мөнгөн тэмдэгт юу вэ?',
+      'Please choose your currency',
       name: 'currencySetupTextHeadline',
       desc: '',
       args: [],
     );
   }
 
-  /// `Үгүй, Би бүртгэлээ устгахыг хүсэхгүй байна!`
+  /// `No, I dont want to delete my account`
   String get deleteAccountDialogButtonTextCancel {
     return Intl.message(
-      'Үгүй, Би бүртгэлээ устгахыг хүсэхгүй байна!',
+      'No, I dont want to delete my account',
       name: 'deleteAccountDialogButtonTextCancel',
       desc: '',
       args: [],
     );
   }
 
-  /// `Тийм, миний бүртгэлийг устгана уу!`
+  /// `Yes, I want to delete my account`
   String get deleteAccountDialogButtonTextDelete {
     return Intl.message(
-      'Тийм, миний бүртгэлийг устгана уу!',
+      'Yes, I want to delete my account',
       name: 'deleteAccountDialogButtonTextDelete',
       desc: '',
       args: [],
     );
   }
 
-  /// `Та өөрийн бүх датаг устгах гэж байна (Профайлын өгөгдөл болон, гүйлгээний мэдээлэл устгагдана) буцаах боломжгүй тул та итгэлтэй байна уу?`
+  /// `You will deleting all data (profile settings, income, expenses...) Are you sure continue this step?`
   String get deleteAccountDialogContent {
     return Intl.message(
-      'Та өөрийн бүх датаг устгах гэж байна (Профайлын өгөгдөл болон, гүйлгээний мэдээлэл устгагдана) буцаах боломжгүй тул та итгэлтэй байна уу?',
+      'You will deleting all data (profile settings, income, expenses...) Are you sure continue this step?',
       name: 'deleteAccountDialogContent',
       desc: '',
       args: [],
     );
   }
 
-  /// `Та өөрийн хаягийг устгахдаа итгэлтэй байна уу?`
+  /// `Are you sure you want to delete your account?`
   String get deleteAccountDialogTitle {
     return Intl.message(
-      'Та өөрийн хаягийг устгахдаа итгэлтэй байна уу?',
+      'Are you sure you want to delete your account?',
       name: 'deleteAccountDialogTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `ТАТАХ`
+  /// `DOWNLOAD`
   String get exportBottomSheetButtonTextDownload {
     return Intl.message(
-      'ТАТАХ',
+      'DOWNLOAD',
       name: 'exportBottomSheetButtonTextDownload',
       desc: '',
       args: [],
     );
   }
 
-  /// `ЭКСПОРТЛОХ`
+  /// `EXPORT`
   String get exportBottomSheetButtonTextExport {
     return Intl.message(
-      'ЭКСПОРТЛОХ',
+      'EXPORT',
       name: 'exportBottomSheetButtonTextExport',
       desc: '',
       args: [],
     );
   }
 
-  /// `CSV/JSON оор экспортлох`
+  /// `Export to CSV/JSON`
   String get exportBottomSheetHeadingText {
     return Intl.message(
-      'CSV/JSON оор экспортлох',
+      'Export to CSV/JSON',
       name: 'exportBottomSheetHeadingText',
       desc: '',
       args: [],
     );
   }
 
-  /// `Дуусах хугацаа`
+  /// `End date`
   String get exportBottomSheetLabelTextEndDate {
     return Intl.message(
-      'Дуусах хугацаа',
+      'End date',
       name: 'exportBottomSheetLabelTextEndDate',
       desc: '',
       args: [],
     );
   }
 
-  /// `Эхлэх хугацаа`
+  /// `Start date`
   String get exportBottomSheetLabelTextStartDate {
     return Intl.message(
-      'Эхлэх хугацаа',
+      'Start date',
       name: 'exportBottomSheetLabelTextStartDate',
       desc: '',
       args: [],
     );
   }
 
-  /// `Эхлэх хугацаа дуусах хугацаанаас өмнө байх ёстой`
+  /// `The start time must be before the end time`
   String get exportBottomSheetTextDateValidationError {
     return Intl.message(
-      'Эхлэх хугацаа дуусах хугацаанаас өмнө байх ёстой',
+      'The start time must be before the end time',
       name: 'exportBottomSheetTextDateValidationError',
       desc: '',
       args: [],
     );
   }
 
-  /// ` + тэмдэг дээр дарж орлого/зарлага нэмэх боломжтой`
+  /// `Click on the + icon to add income / expenses`
   String get homeDailyNoTransactionsTextSubtitle {
     return Intl.message(
-      ' + тэмдэг дээр дарж орлого/зарлага нэмэх боломжтой',
+      'Click on the + icon to add income / expenses',
       name: 'homeDailyNoTransactionsTextSubtitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Энэхүү жягсаалт хоосон байна...`
+  /// `This list is empty...`
   String get homeDailyNoTransactionsTextTitle {
     return Intl.message(
-      'Энэхүү жягсаалт хоосон байна...',
+      'This list is empty...',
       name: 'homeDailyNoTransactionsTextTitle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Google ээр нэвтрэх`
+  /// `Sign-in with Google`
   String get loginButtonTextGoogle {
     return Intl.message(
-      'Google ээр нэвтрэх',
+      'Sign-in with Google',
       name: 'loginButtonTextGoogle',
       desc: '',
       args: [],
     );
   }
 
-  /// `Дараа болъё`
+  /// `Guest login`
   String get loginButtonTextGuest {
     return Intl.message(
-      'Дараа болъё',
+      'Guest login',
       name: 'loginButtonTextGuest',
       desc: '',
       args: [],
     );
   }
 
-  /// `Энэхүү Апп нь таньд өдөр тутамдаа санхүүгийнхээ орлого зарлагыг хөтлөн явуулахад туслах зорилготой юм.`
+  /// `This app is designed to help you keep track of your daily financial income and expenses.`
   String get loginTextTagline {
     return Intl.message(
-      'Энэхүү Апп нь таньд өдөр тутамдаа санхүүгийнхээ орлого зарлагыг хөтлөн явуулахад туслах зорилготой юм.',
+      'This app is designed to help you keep track of your daily financial income and expenses.',
       name: 'loginTextTagline',
       desc: '',
       args: [],
     );
   }
 
-  /// `ДАРААГИЙН`
+  /// `NEXT`
   String get profileSetupButtonTextNext {
     return Intl.message(
-      'ДАРААГИЙН',
+      'NEXT',
       name: 'profileSetupButtonTextNext',
       desc: '',
       args: [],
     );
   }
 
-  /// `И-Мейл хаяг`
+  /// `Email address`
   String get profileSetupLabelTextEmailAddress {
     return Intl.message(
-      'И-Мейл хаяг',
+      'Email address',
       name: 'profileSetupLabelTextEmailAddress',
       desc: '',
       args: [],
     );
   }
 
-  /// `Овог нэр`
+  /// `Full name`
   String get profileSetupLabelTextFullName {
     return Intl.message(
-      'Овог нэр',
+      'Full name',
       name: 'profileSetupLabelTextFullName',
       desc: '',
       args: [],
     );
   }
 
-  /// `Та хэн бэ?`
+  /// `Please fill in your name and email address`
   String get profileSetupTextHeadline {
     return Intl.message(
-      'Та хэн бэ?',
+      'Please fill in your name and email address',
       name: 'profileSetupTextHeadline',
       desc: '',
       args: [],
     );
   }
 
-  /// `Бүртгэл`
+  /// `Register`
   String get settingsScreenHeaderTitleAccount {
     return Intl.message(
-      'Бүртгэл',
+      'Register',
       name: 'settingsScreenHeaderTitleAccount',
       desc: '',
       args: [],
     );
   }
 
-  /// `Аюултай бүс`
+  /// `Danger zone`
   String get settingsScreenHeaderTitleDangerZone {
     return Intl.message(
-      'Аюултай бүс',
+      'Danger zone',
       name: 'settingsScreenHeaderTitleDangerZone',
       desc: '',
       args: [],
     );
   }
 
-  /// `Тохиргоо`
+  /// `Settings`
   String get settingsScreenHeaderTitlePreferences {
     return Intl.message(
-      'Тохиргоо',
+      'Settings',
       name: 'settingsScreenHeaderTitlePreferences',
       desc: '',
       args: [],
     );
   }
 
-  /// `Аппын өнгө`
+  /// `Theme color`
   String get settingsScreenSettingTitleAccentColor {
     return Intl.message(
-      'Аппын өнгө',
+      'Theme color',
       name: 'settingsScreenSettingTitleAccentColor',
       desc: '',
       args: [],
     );
   }
 
-  /// `Хурууны хээ/царайгаар нэвтрэх`
+  /// `Fingerprint / face login`
   String get settingsScreenSettingTitleBiometric {
     return Intl.message(
-      'Хурууны хээ/царайгаар нэвтрэх',
+      'Fingerprint / face login',
       name: 'settingsScreenSettingTitleBiometric',
       desc: '',
       args: [],
     );
   }
 
-  /// `Та аппыг нээх болгонд хурууны хээ/болон царайгаар нэвтрэх болно.`
+  /// `You will be logged in with your fingerprint and / or face each time you open the app.`
   String get settingsScreenSettingTitleBiometricDescription {
     return Intl.message(
-      'Та аппыг нээх болгонд хурууны хээ/болон царайгаар нэвтрэх болно.',
+      'You will be logged in with your fingerprint and / or face each time you open the app.',
       name: 'settingsScreenSettingTitleBiometricDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Мөнгөн тэмдэгт`
+  /// `Currency`
   String get settingsScreenSettingTitleCurrency {
     return Intl.message(
-      'Мөнгөн тэмдэгт',
+      'Currency',
       name: 'settingsScreenSettingTitleCurrency',
       desc: '',
       args: [],
     );
   }
 
-  /// `Бүртгэл устгах`
+  /// `Delete your account`
   String get settingsScreenSettingTitleDeleteAccount {
     return Intl.message(
-      'Бүртгэл устгах',
+      'Delete your account',
       name: 'settingsScreenSettingTitleDeleteAccount',
       desc: '',
       args: [],
     );
   }
 
-  /// `И-мейл хаяг`
+  /// `Email address`
   String get settingsScreenSettingTitleEmailAddress {
     return Intl.message(
-      'И-мейл хаяг',
+      'Email address',
       name: 'settingsScreenSettingTitleEmailAddress',
       desc: '',
       args: [],
     );
   }
 
-  /// `Хэл`
+  /// `Language`
   String get settingsScreenSettingTitleLanguage {
     return Intl.message(
-      'Хэл',
+      'Language',
       name: 'settingsScreenSettingTitleLanguage',
       desc: '',
       args: [],
     );
   }
 
-  /// `Бүтэн Нэр`
+  /// `Full name`
   String get settingsScreenSettingTitleName {
     return Intl.message(
-      'Бүтэн Нэр',
+      'Full name',
       name: 'settingsScreenSettingTitleName',
       desc: '',
       args: [],
     );
   }
 
-  /// `Дизайн`
+  /// `Theme mode`
   String get settingsScreenSettingTitleTheme {
     return Intl.message(
-      'Дизайн',
+      'Theme mode',
       name: 'settingsScreenSettingTitleTheme',
       desc: '',
       args: [],
     );
   }
 
-  /// `AMOLED`
+  /// `AMOLED mode`
   String get settingsScreenSettingTitleThemeAMOLED {
     return Intl.message(
-      'AMOLED',
+      'AMOLED mode',
       name: 'settingsScreenSettingTitleThemeAMOLED',
       desc: '',
       args: [],
     );
   }
 
-  /// `Харанхуй`
+  /// `Dark mode`
   String get settingsScreenSettingTitleThemeDark {
     return Intl.message(
-      'Харанхуй',
+      'Dark mode',
       name: 'settingsScreenSettingTitleThemeDark',
       desc: '',
       args: [],
     );
   }
 
-  /// `Гэрэлтэй`
+  /// `Light mode`
   String get settingsScreenSettingTitleThemeLight {
     return Intl.message(
-      'Гэрэлтэй',
+      'Light mode',
       name: 'settingsScreenSettingTitleThemeLight',
       desc: '',
       args: [],
     );
   }
 
-  /// `Энэхүү Апп нь таньд өдөр тутамдаа санхүүгийнхээ орлого зарлагыг хөтлөн явуулахад туслах зорилготой юм: https://example app share link`
+  /// `This app is designed to help you keep track of your daily financial income and expenses.`
   String get expenseManagerDrawerMessageShare {
     return Intl.message(
-      'Энэхүү Апп нь таньд өдөр тутамдаа санхүүгийнхээ орлого зарлагыг хөтлөн явуулахад туслах зорилготой юм: https://example app share link',
+      'This app is designed to help you keep track of your daily financial income and expenses.',
       name: 'expenseManagerDrawerMessageShare',
       desc: '',
       args: [],
     );
   }
 
-  /// `Аппын талаар дэлгэрэнгүй`
+  /// `About app`
   String get expenseManagerDrawerTextAbout {
     return Intl.message(
-      'Аппын талаар дэлгэрэнгүй',
+      'About app',
       name: 'expenseManagerDrawerTextAbout',
       desc: '',
       args: [],
@@ -654,40 +654,40 @@ class S {
     );
   }
 
-  /// `Ангиллууд`
+  /// `Categories`
   String get expenseManagerDrawerTextCategories {
     return Intl.message(
-      'Ангиллууд',
+      'Categories',
       name: 'expenseManagerDrawerTextCategories',
       desc: '',
       args: [],
     );
   }
 
-  /// `Мөнгөн тэмдэгтүүд`
+  /// `Currencies`
   String get expenseManagerDrawerTextCurrencies {
     return Intl.message(
-      'Мөнгөн тэмдэгтүүд',
+      'Currencies',
       name: 'expenseManagerDrawerTextCurrencies',
       desc: '',
       args: [],
     );
   }
 
-  /// `JSON/CSV ээр экспортлох`
+  /// `Export to JSON/CSV`
   String get expenseManagerDrawerTextExport {
     return Intl.message(
-      'JSON/CSV ээр экспортлох',
+      'Export to JSON/CSV',
       name: 'expenseManagerDrawerTextExport',
       desc: '',
       args: [],
     );
   }
 
-  /// `Гарах`
+  /// `Logout`
   String get expenseManagerDrawerTextLogout {
     return Intl.message(
-      'Гарах',
+      'Logout',
       name: 'expenseManagerDrawerTextLogout',
       desc: '',
       args: [],
@@ -704,130 +704,130 @@ class S {
     );
   }
 
-  /// `Хуваалцах`
+  /// `Share`
   String get expenseManagerDrawerTextShare {
     return Intl.message(
-      'Хуваалцах',
+      'Share',
       name: 'expenseManagerDrawerTextShare',
       desc: '',
       args: [],
     );
   }
 
-  /// `ТАНЫ ТӨСӨВ`
+  /// `YOUR BUDGET`
   String get expenseManagerOverviewTextBalanceHeading {
     return Intl.message(
-      'ТАНЫ ТӨСӨВ',
+      'YOUR BUDGET',
       name: 'expenseManagerOverviewTextBalanceHeading',
       desc: '',
       args: [],
     );
   }
 
-  /// `Та Нийт үлдэгдэл болох  {budgetAmount} {symbol}-өөс {monthYear} сарын байдлаар {spendAmount} {symbol} зарцуулсан байна.`
+  /// `Your total balance {budgetAmount} {symbol} {monthYear} month {spendAmount} {symbol}`
   String expenseManagerOverviewTextBudgetSet(Object budgetAmount, Object symbol, Object monthYear, Object spendAmount) {
     return Intl.message(
-      'Та Нийт үлдэгдэл болох  $budgetAmount $symbol-өөс $monthYear сарын байдлаар $spendAmount $symbol зарцуулсан байна.',
+      'Your total balance $budgetAmount $symbol $monthYear month $spendAmount $symbol',
       name: 'expenseManagerOverviewTextBudgetSet',
       desc: '',
       args: [budgetAmount, symbol, monthYear, spendAmount],
     );
   }
 
-  /// `Энд дарж сар бүрийн орлогын хэмжээгээ оруулснаар илүү үр дүнтэй хөтлөлтийг хийгээрэй.`
+  /// `Click here to enter your general monthly budget`
   String get expenseManagerOverviewTextBudgetUnset {
     return Intl.message(
-      'Энд дарж сар бүрийн орлогын хэмжээгээ оруулснаар илүү үр дүнтэй хөтлөлтийг хийгээрэй.',
+      'Click here to enter your general monthly budget',
       name: 'expenseManagerOverviewTextBudgetUnset',
       desc: '',
       args: [],
     );
   }
 
-  /// `НЭМЭХ`
+  /// `ADD`
   String get transactionBottomSheetButtonTextAdd {
     return Intl.message(
-      'НЭМЭХ',
+      'ADD',
       name: 'transactionBottomSheetButtonTextAdd',
       desc: '',
       args: [],
     );
   }
 
-  /// `Зарлага`
+  /// `Expense`
   String get transactionBottomSheetButtonTextExpense {
     return Intl.message(
-      'Зарлага',
+      'Expense',
       name: 'transactionBottomSheetButtonTextExpense',
       desc: '',
       args: [],
     );
   }
 
-  /// `Орлого`
+  /// `Income`
   String get transactionBottomSheetButtonTextIncome {
     return Intl.message(
-      'Орлого',
+      'Income',
       name: 'transactionBottomSheetButtonTextIncome',
       desc: '',
       args: [],
     );
   }
 
-  /// `ШИНЭЧЛЭХ`
+  /// `UPDATE`
   String get transactionBottomSheetButtonTextUpdate {
     return Intl.message(
-      'ШИНЭЧЛЭХ',
+      'UPDATE',
       name: 'transactionBottomSheetButtonTextUpdate',
       desc: '',
       args: [],
     );
   }
 
-  /// `Дүн`
+  /// `Amount`
   String get transactionBottomSheetLabelTextAmount {
     return Intl.message(
-      'Дүн',
+      'Amount',
       name: 'transactionBottomSheetLabelTextAmount',
       desc: '',
       args: [],
     );
   }
 
-  /// `Огноо`
+  /// `Date`
   String get transactionBottomSheetLabelTextDate {
     return Intl.message(
-      'Огноо',
+      'Date',
       name: 'transactionBottomSheetLabelTextDate',
       desc: '',
       args: [],
     );
   }
 
-  /// `Тайлбар (заавал биш)`
+  /// `Decsription (optional)`
   String get transactionBottomSheetLabelTextDescription {
     return Intl.message(
-      'Тайлбар (заавал биш)',
+      'Decsription (optional)',
       name: 'transactionBottomSheetLabelTextDescription',
       desc: '',
       args: [],
     );
   }
 
-  /// `Шинэ гүйлгээ хийх`
+  /// `New Transaction`
   String get transactionBottomSheetTextHeadingAdd {
     return Intl.message(
-      'Шинэ гүйлгээ хийх',
+      'New Transaction',
       name: 'transactionBottomSheetTextHeadingAdd',
       desc: '',
       args: [],
     );
   }
 
-  /// `Гүйлгээ шинэчлэх`
+  /// `Transaction renewal`
   String get transactionBottomSheetTextHeadingUpdate {
     return Intl.message(
-      'Гүйлгээ шинэчлэх',
+      'Transaction renewal',
       name: 'transactionBottomSheetTextHeadingUpdate',
       desc: '',
       args: [],
@@ -836,40 +836,40 @@ class S {
 
   // skipped getter for the 'transactionListHiddenTransactionText' key
 
-  /// `ЦЭВЭРЛЭХ`
+  /// `CLEAR`
   String get updateBudgetBottomSheetButtonTextClear {
     return Intl.message(
-      'ЦЭВЭРЛЭХ',
+      'CLEAR',
       name: 'updateBudgetBottomSheetButtonTextClear',
       desc: '',
       args: [],
     );
   }
 
-  /// `ТӨСӨВ ОРУУЛАХ`
+  /// `YOUR BUDGET`
   String get updateBudgetBottomSheetButtonTextSetBudget {
     return Intl.message(
-      'ТӨСӨВ ОРУУЛАХ',
+      'YOUR BUDGET',
       name: 'updateBudgetBottomSheetButtonTextSetBudget',
       desc: '',
       args: [],
     );
   }
 
-  /// `Энд дарж сар бүрийн орлогын хэмжээгээ оруулснаар илүү үр дүнтэй хөтлөлтийг хийгээрэй.`
+  /// `Click here to enter your general monthly budget`
   String get updateBudgetBottomSheetHeadingText {
     return Intl.message(
-      'Энд дарж сар бүрийн орлогын хэмжээгээ оруулснаар илүү үр дүнтэй хөтлөлтийг хийгээрэй.',
+      'Click here to enter your general monthly budget',
       name: 'updateBudgetBottomSheetHeadingText',
       desc: '',
       args: [],
     );
   }
 
-  /// `ТӨСӨВ`
+  /// `YOUR BUDGET`
   String get updateBudgetBottomSheetLabelTextBudget {
     return Intl.message(
-      'ТӨСӨВ',
+      'YOUR BUDGET',
       name: 'updateBudgetBottomSheetLabelTextBudget',
       desc: '',
       args: [],

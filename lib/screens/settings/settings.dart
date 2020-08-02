@@ -238,8 +238,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
   ListTile logOut() {
     return ListTile(
       onTap: () => logout(context),
-      leading: Icon(Icons.exit_to_app),
-      title: Text(S.of(context).expenseManagerDrawerTextLogout),
+      leading: Icon(Icons.exit_to_app, color: Theme.of(context).accentColor),
+      title: Text(
+        S.of(context).expenseManagerDrawerTextLogout,
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+        ),
+      ),
     );
   }
 
