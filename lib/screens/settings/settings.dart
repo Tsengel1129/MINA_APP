@@ -57,12 +57,24 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 buildCurrencySetting(user),
                 Divider(),
                 buildHeader(S.of(context).settingsScreenHeaderTitleDangerZone),
-                buildDeleteAccount()
+                buildDeleteAccount(),
+                logOut()
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+
+  logout(BuildContext context) {
+    AuthService authService = AuthService();
+    Navigator.pop(context);
+    authService.signOut();
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      LoginScreen.routeName,
+      (route) => false,
     );
   }
 
@@ -220,6 +232,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         );
       },
+    );
+  }
+
+  ListTile logOut() {
+    return ListTile(
+      onTap: () => logout(context),
+      leading: Icon(Icons.exit_to_app),
+      title: Text(S.of(context).expenseManagerDrawerTextLogout),
     );
   }
 

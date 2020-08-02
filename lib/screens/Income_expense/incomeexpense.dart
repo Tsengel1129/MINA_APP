@@ -52,6 +52,7 @@ class _IncomeExpenseState extends State<IncomeExpense> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
+                SizedBox(height: 20),
                 Expanded(
                   child: ListView(
                     children: <Widget>[
