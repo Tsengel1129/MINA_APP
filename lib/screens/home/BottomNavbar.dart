@@ -32,6 +32,18 @@ class _BottomNavbarState extends State<BottomNavbar> {
                   _iconColor = Theme.of(context).accentColor;
                 });*/
               }),
+          IconButton(
+              icon: Icon(Icons.credit_card,
+                  size: 30, color: Theme.of(context).accentColor),
+              onPressed: () {
+                //home icon -> main.dart
+                Route route =
+                    MaterialPageRoute(builder: (context) => WalletScreen());
+                Navigator.push(context, route);
+                /*setState(() {
+                  _iconColor = Theme.of(context).accentColor;
+                });*/
+              }),
           //route screens names to main (main)
           IconButton(
               icon: Icon(Icons.category, size: 30, color: _iconColor),

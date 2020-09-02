@@ -15,6 +15,8 @@ Map<String, Widget Function(BuildContext)> routes = {
 
   // Апп ын үндсэн
   HomeScreen.routeName: (context) => HomeScreen(),
+  WalletScreen.routeName: (context) => WalletScreen(),
+
   CategoriesScreen.routeName: (context) => CategoriesScreen(),
   CurrenciesScreen.routeName: (context) => CurrenciesScreen(),
   SettingsScreen.routeName: (context) => SettingsScreen(),

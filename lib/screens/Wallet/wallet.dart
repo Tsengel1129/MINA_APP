@@ -1,66 +1,81 @@
-import 'package:expensemanager/screens/Wallet/AddCardPage.dart';
-import 'package:expensemanager/screens/Wallet/CardModel.dart';
-import 'package:expensemanager/screens/Wallet/CardView.dart';
+import 'package:expensemanager/config/utils.dart';
+import 'package:expensemanager/models/models.dart';
 import 'package:expensemanager/screens/home/BottomNavbar.dart';
+import 'package:expensemanager/services/services.dart';
+import 'package:expensemanager/shared/shared.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+// import 'package:transparent_image/transparent_image.dart';
 
-void main() => runApp(new MaterialApp(
-      theme: ThemeData(),
-      home: WalletScreen(),
-      debugShowCheckedModeBanner: false,
-    ));
+// import '../../shared/expensemanager/expensemanager_appbar.dart';
 
 class WalletScreen extends StatefulWidget {
+  static const String routeName = '/wallet';
+
   @override
   _WalletScreenState createState() => _WalletScreenState();
 }
 
 class _WalletScreenState extends State<WalletScreen> {
+  FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color.fromRGBO(238, 241, 242, 1),
-      appBar: AppBar(
-        brightness: Brightness.light,
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: Text(
-          'Миний данснууд',
-          style: TextStyle(color: Colors.black),
-        ),
-        centerTitle: true,
-      ),
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.only(left: 40, top: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              // wallet shape
-              Container(
-                height: 210,
-                child: CardView(CardModel(
-                    available: 500000,
-                    currency: '₮',
-                    bankname: 'Хаан банк',
-                    cardnumber: '1234 1234 4321 4321')),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-            ],
+    //var provider = Provider.of<BottomNavigationBarProvider>(context);
+    final _scaffoldKey = GlobalKey<ScaffoldState>();
+    var user = Provider.of<User>(context);
+    updateStatusBarColor(context);
+
+    if (user != null) {
+      _firebaseMessaging.getToken().then((token) {
+        UserDatabaseService(user).updateUserPushToken(token);
+      });
+
+      return MultiProvider(
+        providers: [
+          StreamProvider<User>.value(
+            value: UserDatabaseService(user).userDocument,
           ),
+          StreamProvider<List<Wallet>>.value(
+            value: WalletDatabaseService(user).walletsByMonth(DateTime.now()),
+          ),
+        ],
+        child: Scaffold(
+          key: _scaffoldKey,
+          drawer: Drawer(
+            //side menu inside
+            child: expenseManagerDrawer(),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+          floatingActionButton: AddWalletFloatingButton(),
+          body: SafeArea(
+            bottom: false,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                SizedBox(height: 20),
+
+                //ExpenseAppBar(),
+                Expanded(
+                  child: ListView(
+                    children: <Widget>[
+                      DailyWalletList(),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          bottomNavigationBar: BottomNavbar(),
         ),
-      ),
-      bottomNavigationBar: BottomNavbar(),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          Route route = MaterialPageRoute(builder: (context) => AddCardPage());
-          Navigator.push(context, route);
-        },
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-    );
+      );
+    } else {
+      return Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
   }
 }
