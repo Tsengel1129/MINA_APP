@@ -34,6 +34,7 @@ class DailyWalletList extends StatelessWidget {
               WalletDatabaseService(user).groupWalletsByDate(snapshot.data);
 
           return ListView.builder(
+            padding: new EdgeInsets.all(10),
             shrinkWrap: true,
             physics: NeverScrollableScrollPhysics(),
             itemCount: grouped.keys.length,
