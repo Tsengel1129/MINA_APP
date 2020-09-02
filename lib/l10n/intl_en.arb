@@ -72,9 +72,13 @@
     "transactionBottomSheetButtonTextIncome": "Income",
     "transactionBottomSheetButtonTextUpdate": "UPDATE",
     "transactionBottomSheetLabelTextAmount": "Amount",
+    "walletBottomSheetLabelTextAmount": "Дансны дугаар",
+
     "transactionBottomSheetLabelTextDate": "Date",
     "transactionBottomSheetLabelTextDescription": "Decsription (optional)",
     "transactionBottomSheetTextHeadingAdd": "New Transaction",
+    "walletBottomSheetTextHeadingAdd": "New Wallet",
+"walletBottomSheetTextHeadingUpdate":"Update Wallet",
     "transactionBottomSheetTextHeadingUpdate": "Transaction renewal",
      "transactionListHiddenTransactionText": "{howMany, plural, one {1 гүйлгээ нуусан} бусад {{howMany} гүйлгээнүүд нуусан байна}}",
     "updateBudgetBottomSheetButtonTextClear": "CLEAR",

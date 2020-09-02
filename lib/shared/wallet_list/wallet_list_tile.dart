@@ -167,7 +167,7 @@ class WalletListTile extends StatelessWidget {
                     children: <Widget>[
                       //cardModel- iin available haruulah
                       Text(
-                        wallet.name.toString(),
+                        wallet.name,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 27,

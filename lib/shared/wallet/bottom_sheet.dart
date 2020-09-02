@@ -27,12 +27,6 @@ class _WalletBottomSheetState extends State<WalletBottomSheet> {
   double bankId;
   String accountType = 'Цалингийн данс';
   String currency;
-  List<String> _types = [
-    'Цалингийн данс',
-    'Хугацаатай хадгаламж',
-    'Хугацаагүй хадгаламж',
-    'Түрийвч'
-  ]; // Option 2
 
   var _nameNode = FocusNode();
   var _bankNameNode = FocusNode();
@@ -87,8 +81,8 @@ class _WalletBottomSheetState extends State<WalletBottomSheet> {
         children: <Widget>[
           Text(
             (widget.wallet == null)
-                ? S.of(context).transactionBottomSheetTextHeadingAdd
-                : S.of(context).transactionBottomSheetTextHeadingUpdate,
+                ? S.of(context).walletBottomSheetTextHeadingAdd
+                : S.of(context).walletBottomSheetTextHeadingUpdate,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 16,
@@ -142,8 +136,7 @@ class _WalletBottomSheetState extends State<WalletBottomSheet> {
                     isExpense ? Icons.remove : Icons.add,
                     color: Theme.of(context).accentColor,
                   ),
-                  labelText:
-                      S.of(context).transactionBottomSheetLabelTextAmount,
+                  labelText: S.of(context).walletBottomSheetLabelTextAmount,
                 ),
               ),
               SizedBox(height: 20),
@@ -156,7 +149,7 @@ class _WalletBottomSheetState extends State<WalletBottomSheet> {
                     FocusScope.of(context).requestFocus(_amountNode),
                 decoration: InputDecoration(
                   labelText:
-                      S.of(context).transactionBottomSheetLabelTextDescription,
+                      S.of(context).walletBottomSheetLabelTextDescription,
                 ),
               ),
               SizedBox(height: 20),
@@ -229,8 +222,6 @@ class _WalletBottomSheetState extends State<WalletBottomSheet> {
   Widget CurrencyWidget(BuildContext context) {
     var currencyProvider = Provider.of<CurrencyProvider>(context);
 
-    var user = Provider.of<User>(context);
-
     return Container(
       margin: EdgeInsets.only(
         bottom: MediaQuery.of(context).viewInsets.bottom,
@@ -255,10 +246,12 @@ class _WalletBottomSheetState extends State<WalletBottomSheet> {
             ),
           ),
           onTap: () {
-            setState(
-                () => currency = currencyProvider.currencies[index].symbol);
+            if (currency != null) {
+              setState(
+                  () => currency = currencyProvider.currencies[index].symbol);
 
-            Navigator.pop(context);
+              Navigator.pop(context);
+            }
           },
         ),
       ),

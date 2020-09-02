@@ -72,10 +72,16 @@
   "transactionBottomSheetButtonTextIncome": "Орлого",
   "transactionBottomSheetButtonTextUpdate": "ШИНЭЧЛЭХ",
   "transactionBottomSheetLabelTextAmount": "Дүн",
+  "walletBottomSheetLabelTextAmount": "Дансны дугаар",
+
   "transactionBottomSheetLabelTextDate": "Огноо",
   "transactionBottomSheetLabelTextDescription": "Тайлбар (заавал биш)",
+  "walletBottomSheetLabelTextDescription": "Банкны нэр",
   "transactionBottomSheetTextHeadingAdd": "Шинэ гүйлгээ хийх",
+  "walletBottomSheetTextHeadingAdd": "Шинэ данс үүсгэх",
   "transactionBottomSheetTextHeadingUpdate": "Гүйлгээ шинэчлэх",
+  "walletBottomSheetTextHeadingUpdate": "Данс Шинэчлэх",
+
   "transactionListHiddenTransactionText": "{howMany, plural, one {1 гүйлгээ нуусан} бусад {{howMany} гүйлгээнүүд нуусан байна}}",
   "updateBudgetBottomSheetButtonTextClear": "ЦЭВЭРЛЭХ",
   "updateBudgetBottomSheetButtonTextSetBudget": "ТӨСӨВ ОРУУЛАХ",

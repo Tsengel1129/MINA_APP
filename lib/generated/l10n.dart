@@ -12,22 +12,23 @@ import 'intl/messages_all.dart';
 
 class S {
   S();
-  
+
   static S current;
-  
-  static const AppLocalizationDelegate delegate =
-    AppLocalizationDelegate();
+
+  static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
-    final localeName = Intl.canonicalizedLocale(name); 
+    final name = (locale.countryCode?.isEmpty ?? false)
+        ? locale.languageCode
+        : locale.toString();
+    final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
       S.current = S();
-      
+
       return S.current;
     });
-  } 
+  }
 
   static S of(BuildContext context) {
     return Localizations.of<S>(context, S);
@@ -725,7 +726,8 @@ class S {
   }
 
   /// `Your total balance {budgetAmount} {symbol} {monthYear} month {spendAmount} {symbol}`
-  String expenseManagerOverviewTextBudgetSet(Object budgetAmount, Object symbol, Object monthYear, Object spendAmount) {
+  String expenseManagerOverviewTextBudgetSet(Object budgetAmount, Object symbol,
+      Object monthYear, Object spendAmount) {
     return Intl.message(
       'Your total balance $budgetAmount $symbol $monthYear month $spendAmount $symbol',
       name: 'expenseManagerOverviewTextBudgetSet',
@@ -794,6 +796,16 @@ class S {
     );
   }
 
+  /// `Дансны дугаар`
+  String get walletBottomSheetLabelTextAmount {
+    return Intl.message(
+      'Дансны дугаар',
+      name: 'walletBottomSheetLabelTextAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Date`
   String get transactionBottomSheetLabelTextDate {
     return Intl.message(
@@ -814,11 +826,41 @@ class S {
     );
   }
 
+  /// `Decsription (optional)`
+  String get walletBottomSheetLabelTextDescription {
+    return Intl.message(
+      'Дансны нэр',
+      name: 'walletBottomSheetLabelTextDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `New Transaction`
   String get transactionBottomSheetTextHeadingAdd {
     return Intl.message(
       'New Transaction',
       name: 'transactionBottomSheetTextHeadingAdd',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Wallet`
+  String get walletBottomSheetTextHeadingAdd {
+    return Intl.message(
+      'New Wallet',
+      name: 'walletBottomSheetTextHeadingAdd',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update Wallet`
+  String get walletBottomSheetTextHeadingUpdate {
+    return Intl.message(
+      'Update Wallet',
+      name: 'walletBottomSheetTextHeadingUpdate',
       desc: '',
       args: [],
     );

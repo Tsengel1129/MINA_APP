@@ -106,6 +106,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "updateBudgetBottomSheetButtonTextSetBudget" : MessageLookupByLibrary.simpleMessage("ТӨСӨВ ОРУУЛАХ"),
     "updateBudgetBottomSheetHeadingText" : MessageLookupByLibrary.simpleMessage("Та энд дарж сарынхаа зарцуулах ерөнхий төсвийг оруулна уу"),
     "updateBudgetBottomSheetLabelTextBudget" : MessageLookupByLibrary.simpleMessage("ТӨСӨВ"),
+    "walletBottomSheetLabelTextAmount" : MessageLookupByLibrary.simpleMessage("Дансны дугаар"),
+    "walletBottomSheetTextHeadingAdd" : MessageLookupByLibrary.simpleMessage("Шинэ данс үүсгэх"),
+    "walletBottomSheetTextHeadingUpdate" : MessageLookupByLibrary.simpleMessage("Данс Шинэчлэх"),
     "walletSectionEmptyText" : MessageLookupByLibrary.simpleMessage("Таньд данс байхгүй байна \n + \n дарж данс нээнэ үү.")
   };
 }

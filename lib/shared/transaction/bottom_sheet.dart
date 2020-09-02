@@ -116,8 +116,7 @@ class _TransactionBottomSheetState extends State<TransactionBottomSheet> {
                     isExpense ? Icons.remove : Icons.add,
                     color: Theme.of(context).accentColor,
                   ),
-                  labelText:
-                      S.of(context).transactionBottomSheetLabelTextAmount,
+                  labelText: S.of(context).walletBottomSheetLabelTextAmount,
                 ),
               ),
               SizedBox(height: 20),
