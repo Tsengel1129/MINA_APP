@@ -1,5 +1,6 @@
 import 'package:expensemanager/generated/l10n.dart';
 import 'package:expensemanager/models/models.dart';
+import 'package:expensemanager/services/currency.dart';
 import 'package:expensemanager/services/services.dart';
 import 'package:expensemanager/shared/shared.dart';
 import 'package:flutter/material.dart';
@@ -23,14 +24,29 @@ class _WalletBottomSheetState extends State<WalletBottomSheet> {
   double amount;
   String name;
   DateTime timestamp;
+  double bankId;
+  String accountType = 'Цалингийн данс';
+  String currency;
+  List<String> _types = [
+    'Цалингийн данс',
+    'Хугацаатай хадгаламж',
+    'Хугацаагүй хадгаламж',
+    'Түрийвч'
+  ]; // Option 2
 
   var _nameNode = FocusNode();
+  var _bankNameNode = FocusNode();
+
   var _amountNode = FocusNode();
+  var _bankIdNode = FocusNode();
 
   bool isExpense = true;
 
   TextEditingController _nameController = TextEditingController();
+
   TextEditingController _amountController = TextEditingController();
+  TextEditingController _bankIdController = TextEditingController();
+
   TextEditingController _dateController = TextEditingController();
 
   setIsExpense(bool value) => setState(() => isExpense = value);
@@ -84,7 +100,52 @@ class _WalletBottomSheetState extends State<WalletBottomSheet> {
           SizedBox(height: 20),
           Column(
             children: <Widget>[
-              // buildCategorySelector(),
+              SizedBox(height: 20),
+              DropdownButton(
+                hint: accountType == null
+                    ? Text('Dropdown')
+                    : Text(
+                        accountType,
+                        style: TextStyle(color: Colors.black),
+                      ),
+                isExpanded: true,
+                iconSize: 30.0,
+                style: TextStyle(color: Colors.black),
+                items: [
+                  'Цалингийн данс',
+                  'Хугацаатай хадгаламж',
+                  'Хугацаагүй хадгаламж',
+                  'Түрийвч'
+                ].map(
+                  (val) {
+                    return DropdownMenuItem<String>(
+                      value: val,
+                      child: Text(val),
+                    );
+                  },
+                ).toList(),
+                onChanged: (val) {
+                  setState(() => accountType = val);
+                },
+              ),
+              SizedBox(height: 20),
+              TextField(
+                focusNode: _bankIdNode,
+                controller: _bankIdController,
+                keyboardType: TextInputType.numberWithOptions(
+                  decimal: true,
+                  signed: false,
+                ),
+                onChanged: (v) => setState(() => bankId = double.parse(v)),
+                decoration: InputDecoration(
+                  prefixIcon: Icon(
+                    isExpense ? Icons.remove : Icons.add,
+                    color: Theme.of(context).accentColor,
+                  ),
+                  labelText:
+                      S.of(context).transactionBottomSheetLabelTextAmount,
+                ),
+              ),
               SizedBox(height: 20),
               TextField(
                 focusNode: _nameNode,
@@ -136,6 +197,21 @@ class _WalletBottomSheetState extends State<WalletBottomSheet> {
                   labelText: S.of(context).transactionBottomSheetLabelTextDate,
                 ),
               ),
+              RaisedButton(
+                onPressed: () {
+                  showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    builder: (context) => CurrencyWidget(context),
+                  );
+                },
+                textColor: Colors.white,
+                color: Colors.red,
+                padding: const EdgeInsets.all(8.0),
+                child: new Text(
+                  "Мөнгөн тэмдэгт сонгох",
+                ),
+              ),
               SizedBox(height: 20),
               expenseManagerButton(
                   title: (widget.wallet == null)
@@ -149,16 +225,58 @@ class _WalletBottomSheetState extends State<WalletBottomSheet> {
     );
   }
 
+  @override
+  Widget CurrencyWidget(BuildContext context) {
+    var currencyProvider = Provider.of<CurrencyProvider>(context);
+
+    var user = Provider.of<User>(context);
+
+    return Container(
+      margin: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+      ),
+      padding: const EdgeInsets.all(20),
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: currencyProvider.currencies.length,
+        itemBuilder: (context, index) => ListTile(
+          leading: Text(
+            currencyProvider.currencies[index].symbol,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 24,
+              color: Theme.of(context).accentColor,
+            ),
+          ),
+          title: Text(
+            currencyProvider.currencies[index].name,
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          onTap: () {
+            setState(
+                () => currency = currencyProvider.currencies[index].symbol);
+
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
+
   addWallet() async {
     FocusScope.of(context).unfocus();
     var user = Provider.of<User>(context, listen: false);
 
     Wallet wallet = Wallet(
-      id: id,
-      amount: amount,
-      name: name,
-      timestamp: timestamp,
-    );
+        id: id,
+        amount: amount,
+        name: name,
+        timestamp: timestamp,
+        bankId: bankId,
+        accountType: accountType,
+        currency: currency);
 
     if (widget.wallet != null) {
       WalletDatabaseService(user).updateWallet(wallet);
@@ -168,80 +286,4 @@ class _WalletBottomSheetState extends State<WalletBottomSheet> {
 
     Navigator.pop(context);
   }
-
-  // Widget buildCategorySelector() {
-  //   return Consumer<CategoryProvider>(
-  //     builder: (context, categoryProvider, _) {
-  //       var categories = categoryProvider.categories
-  //           .where((x) => x.type == (isExpense ? 'expense' : 'income'))
-  //           .toList();
-
-  //       return Row(
-  //         mainAxisSize: MainAxisSize.min,
-  //         children: <Widget>[
-  //                Row(
-  //                   children: <Widget>[
-  //                     Container(
-  //                       width: 80,
-  //                       height: 80,
-
-  //                       decoration: BoxDecoration(
-  //                         border: Border(
-  //                           right: BorderSide(
-  //                             width: 1,
-  //                             color: Colors.grey.withOpacity(0.5),
-  //                           ),
-  //                         ),
-  //                       ),
-  //                     ),
-  //                     SizedBox(width: 10),
-  //                   ],
-  //                 ),
-  //           Expanded(
-  //             child: Container(
-  //               width: double.infinity,
-  //               height: 80,
-  //               // child: ListView.builder(
-  //               //   itemExtent: 90,
-  //               //   shrinkWrap: true,
-  //               //   itemCount: categories.length,
-  //               //   scrollDirection: Axis.horizontal,
-  //               //   physics: BouncingScrollPhysics(),
-  //               //   itemBuilder: (context, index) {
-  //               //     var x = categories[index];
-  //               //     return CategorySelector(
-  //               //       category: x,
-  //               //       isSelected: x.name == selectedCategory?.name,
-  //               //       onPressed: () => setState(() => selectedCategory = x),
-  //               //     );
-  //               //   },
-  //               // ),
-  //             ),
-  //           ),
-  //         ],
-  //       );
-  //     },
-  //   );
-  // }
-
-  // Container buildTypeSelector() {
-  //   return Container(
-  //     width: double.infinity,
-  //     height: 45,
-  //     child: Row(
-  //       children: <Widget>[
-  //         WalletTypeSelector(
-  //           title: S.of(context).walletBottomSheetButtonTextExpense,
-  //           isSelected: isExpense,
-  //           onPressed: () => setIsExpense(true),
-  //         ),
-  //         WalletTypeSelector(
-  //           title: S.of(context).walletBottomSheetButtonTextIncome,
-  //           isSelected: !isExpense,
-  //           onPressed: () => setIsExpense(false),
-  //         ),
-  //       ],
-  //     ),
-  //   );
-  // }
 }

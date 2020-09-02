@@ -58,6 +58,12 @@ class WalletDatabaseService {
     await _walletCollection.document(wallet.id).delete();
   }
 
+  Future setWalletCurrency(String id, Currency currency) async {
+    return _walletCollection.document(id).updateData({
+      'currency': currency.toJson(),
+    });
+  }
+
   Map<String, List<Wallet>> groupWalletsByDate(
     List<Wallet> wallets,
   ) {
