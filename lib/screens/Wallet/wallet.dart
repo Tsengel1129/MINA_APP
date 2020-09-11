@@ -1,6 +1,6 @@
+import 'package:circular_bottom_navigation/circular_bottom_navigation.dart';
 import 'package:expensemanager/config/utils.dart';
 import 'package:expensemanager/models/models.dart';
-import 'package:expensemanager/screens/home/BottomNavbar.dart';
 import 'package:expensemanager/services/services.dart';
 import 'package:expensemanager/shared/shared.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
@@ -18,6 +18,8 @@ class WalletScreen extends StatefulWidget {
 }
 
 class _WalletScreenState extends State<WalletScreen> {
+  int selectedPos = 1;
+
   FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
 
   @override
@@ -67,7 +69,6 @@ class _WalletScreenState extends State<WalletScreen> {
               ],
             ),
           ),
-          bottomNavigationBar: BottomNavbar(),
         ),
       );
     } else {

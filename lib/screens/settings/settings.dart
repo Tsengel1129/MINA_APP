@@ -8,7 +8,6 @@ import 'package:expensemanager/shared/shared.dart';
 import 'package:flutter/material.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:provider/provider.dart';
-import 'package:expensemanager/screens/home/BottomNavbar.dart';
 
 import '../../shared/expensemanager/expensemanager_appbar.dart';
 
@@ -36,7 +35,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
       ],
       child: Scaffold(
-        bottomNavigationBar: BottomNavbar(),
         body: Consumer<User>(
           builder: (context, user, _) => SafeArea(
             child: ListView(

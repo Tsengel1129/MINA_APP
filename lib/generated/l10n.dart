@@ -12,23 +12,22 @@ import 'intl/messages_all.dart';
 
 class S {
   S();
-
+  
   static S current;
-
-  static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
+  
+  static const AppLocalizationDelegate delegate =
+    AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
-    final localeName = Intl.canonicalizedLocale(name);
+    final name = (locale.countryCode?.isEmpty ?? false) ? locale.languageCode : locale.toString();
+    final localeName = Intl.canonicalizedLocale(name); 
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
       S.current = S();
-
+      
       return S.current;
     });
-  }
+  } 
 
   static S of(BuildContext context) {
     return Localizations.of<S>(context, S);
@@ -726,8 +725,7 @@ class S {
   }
 
   /// `Your total balance {budgetAmount} {symbol} {monthYear} month {spendAmount} {symbol}`
-  String expenseManagerOverviewTextBudgetSet(Object budgetAmount, Object symbol,
-      Object monthYear, Object spendAmount) {
+  String expenseManagerOverviewTextBudgetSet(Object budgetAmount, Object symbol, Object monthYear, Object spendAmount) {
     return Intl.message(
       'Your total balance $budgetAmount $symbol $monthYear month $spendAmount $symbol',
       name: 'expenseManagerOverviewTextBudgetSet',
@@ -821,16 +819,6 @@ class S {
     return Intl.message(
       'Decsription (optional)',
       name: 'transactionBottomSheetLabelTextDescription',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Decsription (optional)`
-  String get walletBottomSheetLabelTextDescription {
-    return Intl.message(
-      'Дансны нэр',
-      name: 'walletBottomSheetLabelTextDescription',
       desc: '',
       args: [],
     );

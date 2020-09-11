@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:expensemanager/screens/home/BottomNavbar.dart';
 
 class FilterScreen extends StatefulWidget {
   static const String routeName = '/filter';
@@ -11,9 +10,8 @@ class _FilterScreenState extends State<FilterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        bottomNavigationBar: BottomNavbar(),
         body: SafeArea(
-          child: Text('Нарийвчлан харах'),
-        ));
+      child: Text('Нарийвчлан харах'),
+    ));
   }
 }

@@ -1,4 +1,3 @@
-import 'package:expensemanager/screens/home/BottomNavbar.dart';
 import 'package:expensemanager/config/utils.dart';
 import 'package:expensemanager/generated/l10n.dart';
 import 'package:expensemanager/models/models.dart';
@@ -24,7 +23,6 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        bottomNavigationBar: BottomNavbar(),
         key: _scaffoldKey,
         appBar: AppBar(
           elevation: 0,

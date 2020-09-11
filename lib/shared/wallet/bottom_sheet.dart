@@ -50,6 +50,7 @@ class _WalletBottomSheetState extends State<WalletBottomSheet> {
   @override
   void initState() {
     super.initState();
+
     var date = DateTime.now();
     setDate(date);
 
@@ -147,10 +148,10 @@ class _WalletBottomSheetState extends State<WalletBottomSheet> {
                 onChanged: (v) => setState(() => name = v),
                 onEditingComplete: () =>
                     FocusScope.of(context).requestFocus(_amountNode),
-                decoration: InputDecoration(
-                  labelText:
-                      S.of(context).walletBottomSheetLabelTextDescription,
-                ),
+                // decoration: InputDecoration(
+                //   labelText:
+                //       S.of(context).walletBottomSheetLabelTextDescription,
+                // ),
               ),
               SizedBox(height: 20),
               TextField(
