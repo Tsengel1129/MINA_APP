@@ -1,7 +1,10 @@
 import 'package:circular_bottom_navigation/tab_item.dart';
 import 'package:expensemanager/config/utils.dart';
+import 'package:expensemanager/generated/l10n.dart';
 import 'package:expensemanager/models/models.dart';
 import 'package:expensemanager/screens/categories/categories.dart';
+import 'package:expensemanager/screens/filter/filter.dart';
+import 'package:expensemanager/screens/reminder/newScreen.dart';
 import 'package:expensemanager/screens/screens.dart';
 import 'package:expensemanager/services/services.dart';
 import 'package:expensemanager/shared/shared.dart';
@@ -10,34 +13,27 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:circular_bottom_navigation/circular_bottom_navigation.dart';
 
+import '../screens.dart';
+
 // import 'package:transparent_image/transparent_image.dart';
 
 // import '../../shared/expensemanager/expensemanager_appbar.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = '/home';
+  final GlobalKey<ScaffoldState> scaffoldKey;
+
+  HomeScreen({Key key, this.scaffoldKey}) : super(key: key);
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  Transaction transaction;
+
   int selectedPos = 0;
   double bottomNavBarHeight = 60;
-
-  List<TabItem> tabItems = List.of([
-    new TabItem(Icons.home, "Home", Color(0xFF1B54A9),
-        labelStyle: TextStyle(fontWeight: FontWeight.bold)),
-    new TabItem(Icons.search, "Wallets", Color(0xFF1B54A9),
-        labelStyle:
-            TextStyle(color: Color(0xFF1B54A9), fontWeight: FontWeight.bold)),
-    new TabItem(Icons.category, "Categories", Color(0xFF1B54A9),
-        labelStyle:
-            TextStyle(color: Color(0xFF1B54A9), fontWeight: FontWeight.bold)),
-    new TabItem(Icons.settings, "Settings", Color(0xFF1B54A9),
-        labelStyle:
-            TextStyle(color: Color(0xFF1B54A9), fontWeight: FontWeight.bold)),
-  ]);
 
   CircularBottomNavigationController _navigationController;
 
@@ -86,7 +82,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: bodyContainer(),
                 padding: EdgeInsets.only(bottom: bottomNavBarHeight),
               ),
-              Align(alignment: Alignment.bottomCenter, child: bottomNav())
+              Align(
+                  alignment: Alignment.bottomCenter, child: bottomNav(context))
             ],
           ),
         ),
@@ -106,62 +103,97 @@ class _HomeScreenState extends State<HomeScreen> {
         return myHomeScreenWidget();
         break;
       case 1:
-        return WalletScreen();
+        return filterSc();
         break;
       case 2:
-        return CategoriesScreen();
+        return transactionScreen();
         break;
       case 3:
-        return SettingsScreen();
+        return WalletScreen();
         break;
+      case 4:
+        return SettingsScreen();
     }
+    return Container();
+  }
+
+  Widget filterSc() {
+    return Scaffold(body: FilterScreen());
+  }
+
+  Widget transactionScreen() {
+    return Scaffold(body: TransactionBottomSheet());
   }
 
   Widget myHomeScreenWidget() {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: AddTransactionFloatingButton(),
       body: SafeArea(
         bottom: false,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             SizedBox(height: 20),
-
             //ExpenseAppBar(),
-            Expanded(
-              child: ListView(
-                children: <Widget>[
-                  expenseManagerOverview(),
-                  DailyTransactionList(),
-                ],
-              ),
-            ),
+            Expanded(child: DailyTransactionList()),
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: AddTransactionFloatingButton(),
     );
   }
 
-  Widget bottomNav() {
+  Widget bottomNav(context) {
     return CircularBottomNavigation(
-      tabItems,
+      List.of([
+        new TabItem(Icons.home, S.of(context).textNavHome,
+            Theme.of(context).accentColor,
+            labelStyle: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).accentColor,
+            )),
+        new TabItem(Icons.search, S.of(context).textNavFilter,
+            Theme.of(context).accentColor,
+            labelStyle: TextStyle(
+                color: Theme.of(context).accentColor,
+                fontWeight: FontWeight.bold)),
+        new TabItem(Icons.add, S.of(context).textNavTransaction,
+            Theme.of(context).accentColor,
+            labelStyle: TextStyle(
+                color: Theme.of(context).accentColor,
+                fontWeight: FontWeight.bold)),
+        new TabItem(Icons.account_balance_wallet, S.of(context).textNavWallet,
+            Theme.of(context).accentColor,
+            labelStyle: TextStyle(
+                color: Theme.of(context).accentColor,
+                fontWeight: FontWeight.bold)),
+        //new TabItem(Icons.category, "Categories", Color(0xFF1B54A9),
+        //  labelStyle:
+        //    TextStyle(color: Color(0xFF1B54A9), fontWeight: FontWeight.bold)),
+        new TabItem(Icons.settings, S.of(context).textNavSettings,
+            Theme.of(context).accentColor,
+            labelStyle: TextStyle(
+                color: Theme.of(context).accentColor,
+                fontWeight: FontWeight.bold)),
+      ]),
       controller: _navigationController,
       barHeight: bottomNavBarHeight,
       barBackgroundColor: Colors.white,
       animationDuration: Duration(milliseconds: 300),
       selectedCallback: (int selectedPos) {
-        setState(() {
-          this.selectedPos = selectedPos;
-          print(_navigationController.value);
-        });
+        if (mounted) {
+          setState(() {
+            this.selectedPos = selectedPos;
+            print(_navigationController.value);
+          });
+        }
       },
     );
   }
 
   @override
   void dispose() {
+    _navigationController?.dispose();
     super.dispose();
-    _navigationController.dispose();
   }
 }

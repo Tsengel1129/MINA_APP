@@ -10,15 +10,35 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+    # generate: true    # Add this line
+
   flutter_localizations:
     sdk: flutter
+  flutter_material_color_picker: "^0.0.5"
+  flutter_local_notifications: ^1.4.1
+  timezone: ^0.5.9
+  flutter_svg: ^0.18.0 # help us to use SVG in our app
+  syncfusion_flutter_charts: ^18.3.51
+  percent_indicator: "^2.1.7+2"
+
+  path_provider: ^1.6.7
   after_layout: ^1.0.7+2
-  cloud_firestore: ^0.13.4
+  cloud_firestore: ^0.14.3
   collection: ^1.14.11
   encrypt: ^4.0.0
   firebase_analytics: ^5.0.11
-  firebase_auth: ^0.15.5+2
-  firebase_core: ^0.4.4+2
+  firebase_auth: 0.17.0-dev.2
+  firebase_core: ^0.5.2
+  firebase_crashlytics: "^0.2.3"
+  grouped_buttons: ^1.0.4
+  syncfusion_flutter_datepicker: ^18.3.48-beta
+  radio_grouped_buttons: 1.0.0+2
+  streaming_shared_preferences: ^1.0.1
+  flutter_onboarding_screen: ^0.0.2
+  fl_chart: ^0.12.0
+
+  # hive: ^[version]
+  # hive_flutter: ^[version]
   firebase_messaging: ^6.0.12
   google_sign_in: ^4.1.4
   http: ^0.12.0+4
@@ -28,6 +48,8 @@ dependencies:
   package_info: ^0.4.0+14
   path: ^1.6.4
   provider: ^4.0.4
+  introduction_screen: ^1.0.7
+
   share: ^0.6.3+6
   shared_preferences: ^0.5.6+2
   sqflite: ^1.2.2
@@ -42,6 +64,8 @@ dev_dependencies:
   build_runner: ^1.7.4
   flutter_launcher_icons: ^0.7.4
   intl_translation: ^0.17.9
+  # hive_generator: ^[version]
+
   json_serializable: ^3.2.5
 
 flutter:
@@ -49,8 +73,12 @@ flutter:
   assets:
     - assets/logos/
     - assets/images/
+    # - assets/svg/
+    # - assets/splash/
+
     - assets/categories/expense/
     - assets/categories/income/
+    - assets/categories/transfer/
     - assets/categories/custom/
   fonts:
     - family: Ubuntu
@@ -65,6 +93,16 @@ flutter:
           weight: 700
         - asset: assets/fonts/Ubuntu-Bold.ttf
           weight: 800
+    - family: PT Serif
+      fonts:
+        - asset: assets/fonts/PTSerif-Bold.ttf
+          weight: 400
+        - asset: assets/fonts/PTSerif-BoldItalic.ttf
+          weight: 500
+        - asset: assets/fonts/PTSerif-Italic.ttf
+          weight: 600
+        - asset: assets/fonts/PTSerif-Regular.ttf
+          weight: 700
 
 flutter_icons:
   android: true
@@ -73,3 +111,4 @@ flutter_icons:
 
 flutter_intl:
   enabled: true
+

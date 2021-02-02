@@ -3,38 +3,44 @@ import 'package:expensemanager/models/models.dart';
 
 class Wallet {
   final String id;
+  final String walletId;
   final String name;
   final DateTime timestamp;
   final double amount;
   final double bankId;
   final String accountType;
-  final String currency;
+  //final String currency;
 
-  Wallet(
-      {this.id,
-      this.name,
-      this.timestamp,
-      this.amount,
-      this.bankId,
-      this.accountType,
-      this.currency});
+  Wallet({
+    this.id,
+    this.walletId,
+    this.name,
+    this.timestamp,
+    this.amount,
+    this.bankId,
+    this.accountType,
+    //this.currency
+  });
 
   factory Wallet.fromJson(Map<String, dynamic> json) => Wallet(
-      id: json['id'] as String,
-      name: json['name'],
-      timestamp: (json['timestamp'] as Timestamp).toDate(),
-      amount: double.parse(json['amount']),
-      bankId: double.parse(json['bankId']),
-      accountType: json['accountType'],
-      currency: json['currency']);
+        id: json['id'] as String,
+        walletId: json['walletId'] as String,
+        name: json['name'],
+        timestamp: (json['timestamp'] as Timestamp).toDate(),
+        amount: double.parse(json['amount']),
+        bankId: double.parse(json['bankId']),
+        accountType: json['accountType'],
+        //currency: json['currency']
+      );
 
   Map<String, dynamic> toJson() => <String, dynamic>{
         'id': this.id,
+        'walletId': this.walletId,
         'name': this.name,
         'timestamp': this.timestamp,
         'amount': this.amount.toString(),
         'bankId': this.bankId.toString(),
         'accountType': this.accountType,
-        'currency': this.currency
+        //'currency': this.currency
       };
 }

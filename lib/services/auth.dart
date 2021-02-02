@@ -48,7 +48,8 @@ class AuthService {
       return user;
     } catch (e) {
       print(e.message);
-      throw Exception('Уучлаарай ямар нэг зүйл буруу байна. Та дахин оролдоно уу!');
+      throw Exception(
+          'Уучлаарай ямар нэг зүйл буруу байна. Та дахин оролдоно уу!');
     }
   }
 
@@ -69,7 +70,8 @@ class AuthService {
       return await _auth.signOut();
     } catch (e) {
       print(e.message);
-      throw Exception('Уучлаарай ямар нэг зүйл буруу байна. Та дахин оролдоно уу!');
+      throw Exception(
+          'Уучлаарай ямар нэг зүйл буруу байна. Та дахин оролдоно уу!');
     }
   }
 

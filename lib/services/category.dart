@@ -18,7 +18,7 @@ class CategoryProvider extends ChangeNotifier {
       version: 1,
       onCreate: (db, version) async {
         await db.execute(
-          "CREATE TABLE categories(id TEXT PRIMARY KEY, icon TEXT, name TEXT, type TEXT)",
+          "CREATE TABLE categories(id TEXT PRIMARY KEY, icon TEXT, name TEXT, type TEXT, priority TEXT, color TEXT, budget TEXT, usedBudget TEXT)",
         );
         baseIncomeCategories.forEach((x) async {
           await db.insert(
@@ -73,6 +73,7 @@ class CategoryProvider extends ChangeNotifier {
     );
 
     await this.fetch();
+    print(category.toJson());
   }
 
   Future delete(Category category) async {

@@ -2,6 +2,7 @@ import 'package:expensemanager/models/models.dart';
 import 'package:flutter/material.dart' hide Key;
 import 'package:flutter/services.dart';
 import 'package:package_info/package_info.dart';
+import 'dart:math';
 
 updateStatusBarColor(BuildContext context) {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -9,6 +10,11 @@ updateStatusBarColor(BuildContext context) {
     statusBarBrightness: Brightness.dark,
     statusBarIconBrightness: Brightness.light,
   ));
+}
+
+double roundDouble(double value, int places) {
+  double mod = pow(10.0, places);
+  return ((value * mod).round().toDouble() / mod);
 }
 
 String formatAmount(User user, double amount) {

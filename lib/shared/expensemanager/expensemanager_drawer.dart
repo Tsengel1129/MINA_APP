@@ -2,7 +2,7 @@ import 'package:expensemanager/config/config.dart';
 import 'package:expensemanager/generated/l10n.dart';
 import 'package:expensemanager/models/models.dart';
 import 'package:expensemanager/screens/categories/categories.dart';
-import 'package:expensemanager/screens/currencies/currencies.dart';
+// import 'package:expensemanager/screens/currencies/currencies.dart';
 import 'package:expensemanager/screens/screens.dart';
 import 'package:expensemanager/services/services.dart';
 import 'package:expensemanager/shared/shared.dart';
@@ -21,8 +21,7 @@ class expenseManagerDrawer extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Expanded(
-            child: ListView(
-              shrinkWrap: true,
+            child: Column(
               children: <Widget>[
                 DrawerHeader(user),
                 SizedBox(height: 10),
@@ -34,14 +33,14 @@ class expenseManagerDrawer extends StatelessWidget {
                   leading: Icon(Icons.category),
                   title: Text(S.of(context).expenseManagerDrawerTextCategories),
                 ),
-                ListTile(
-                  onTap: () {
-                    Navigator.pop(context);
-                    Navigator.pushNamed(context, CurrenciesScreen.routeName);
-                  },
-                  leading: Icon(Icons.attach_money),
-                  title: Text(S.of(context).expenseManagerDrawerTextCurrencies),
-                ),
+                // ListTile(
+                //   onTap: () {
+                //     Navigator.pop(context);
+                //     Navigator.pushNamed(context, CurrenciesScreen.routeName);
+                //   },
+                //   leading: Icon(Icons.attach_money),
+                //   title: Text(S.of(context).expenseManagerDrawerTextCurrencies),
+                // ),
                 Divider(),
                 ListTile(
                   onTap: () {
@@ -130,11 +129,8 @@ class expenseManagerDrawer extends StatelessWidget {
     AuthService authService = AuthService();
     Navigator.pop(context);
     authService.signOut();
-    Navigator.pushNamedAndRemoveUntil(
-      context,
-      LoginScreen.routeName,
-      (route) => false,
-    );
+    Navigator.push(context,
+        MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
   }
 }
 

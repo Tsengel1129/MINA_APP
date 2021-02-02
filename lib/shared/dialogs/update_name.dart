@@ -22,6 +22,7 @@ class _UpdateNameDialogState extends State<UpdateNameDialog> {
   @override
   void initState() {
     super.initState();
+
     _nameController.text = widget.name;
   }
 

@@ -1,5 +1,6 @@
-import 'package:circular_bottom_navigation/circular_bottom_navigation.dart';
+// import 'package:circular_bottom_navigation/circular_bottom_navigation.dart';
 import 'package:expensemanager/config/utils.dart';
+import 'package:expensemanager/generated/l10n.dart';
 import 'package:expensemanager/models/models.dart';
 import 'package:expensemanager/services/services.dart';
 import 'package:expensemanager/shared/shared.dart';
@@ -18,7 +19,7 @@ class WalletScreen extends StatefulWidget {
 }
 
 class _WalletScreenState extends State<WalletScreen> {
-  int selectedPos = 1;
+  int selectedPos = 3;
 
   FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
 
@@ -49,8 +50,21 @@ class _WalletScreenState extends State<WalletScreen> {
             //side menu inside
             child: expenseManagerDrawer(),
           ),
-          floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-          floatingActionButton: AddWalletFloatingButton(),
+          appBar: new AppBar(
+            // leading: IconButton(
+            //   icon: Icon(Icons.arrow_back, color: Colors.black),
+            //   onPressed: () => Navigator.of(context).pop(),
+            // ),
+            automaticallyImplyLeading: false,
+
+            elevation: 2,
+            title: new Text(
+              S.of(context).walletTitle,
+              style: TextStyle(color: Colors.white),
+            ),
+            backgroundColor: Theme.of(context).accentColor,
+            centerTitle: true,
+          ),
           body: SafeArea(
             bottom: false,
             child: Column(
@@ -60,7 +74,7 @@ class _WalletScreenState extends State<WalletScreen> {
 
                 //ExpenseAppBar(),
                 Expanded(
-                  child: ListView(
+                  child: Column(
                     children: <Widget>[
                       DailyWalletList(),
                     ],
@@ -69,6 +83,8 @@ class _WalletScreenState extends State<WalletScreen> {
               ],
             ),
           ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+          floatingActionButton: AddWalletFloatingButton(),
         ),
       );
     } else {

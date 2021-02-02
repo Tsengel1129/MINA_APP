@@ -9,6 +9,8 @@ import 'intl/messages_all.dart';
 // **************************************************************************
 
 // ignore_for_file: non_constant_identifier_names, lines_longer_than_80_chars
+// ignore_for_file: join_return_with_assignment, prefer_final_in_for_each
+// ignore_for_file: avoid_redundant_argument_values
 
 class S {
   S();
@@ -43,16 +45,6 @@ class S {
     );
   }
 
-  /// `Add your new card click the \n + \n button in the bottom right`
-  String get walletSectionEmptyText {
-    return Intl.message(
-      'Add your new card click the \n + \n button in the bottom right',
-      name: 'walletSectionEmptyText',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `CANCEL`
   String get addCategoryBottomSheetButtonTextCancel {
     return Intl.message(
@@ -73,6 +65,16 @@ class S {
     );
   }
 
+  /// `Icon`
+  String get addCategoryBottomSheetLabelTextCategoryIcon {
+    return Intl.message(
+      'Icon',
+      name: 'addCategoryBottomSheetLabelTextCategoryIcon',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Categories name`
   String get addCategoryBottomSheetLabelTextCategoryName {
     return Intl.message(
@@ -83,11 +85,71 @@ class S {
     );
   }
 
+  /// `Name`
+  String get addcategoryName {
+    return Intl.message(
+      'Name',
+      name: 'addcategoryName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add reminder`
+  String get addReminder {
+    return Intl.message(
+      'Add reminder',
+      name: 'addReminder',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Mina app`
   String get appName {
     return Intl.message(
       'Mina app',
       name: 'appName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this category?`
+  String get categoriesDeleteAreYouSure {
+    return Intl.message(
+      'Are you sure you want to delete this category?',
+      name: 'categoriesDeleteAreYouSure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Appearance`
+  String get categoriesLabelTextCategoryTypeAppearance {
+    return Intl.message(
+      'Appearance',
+      name: 'categoriesLabelTextCategoryTypeAppearance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Necessary`
+  String get categoriesLabelTextCategoryTypeNecessary {
+    return Intl.message(
+      'Necessary',
+      name: 'categoriesLabelTextCategoryTypeNecessary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Needs`
+  String get categoriesLabelTextCategoryTypeNeeds {
+    return Intl.message(
+      'Needs',
+      name: 'categoriesLabelTextCategoryTypeNeeds',
       desc: '',
       args: [],
     );
@@ -113,10 +175,20 @@ class S {
     );
   }
 
-  /// `Categories deleted`
+  /// `Delete`
+  String get categoriesScreenSnackbarTextDelete {
+    return Intl.message(
+      'Delete',
+      name: 'categoriesScreenSnackbarTextDelete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Category deleted successfully`
   String get categoriesScreenSnackbarTextDeleteMessage {
     return Intl.message(
-      'Categories deleted',
+      'Category deleted successfully',
       name: 'categoriesScreenSnackbarTextDeleteMessage',
       desc: '',
       args: [],
@@ -153,6 +225,16 @@ class S {
     );
   }
 
+  /// `Filtered Transactions`
+  String get filteredTitle {
+    return Intl.message(
+      'Filtered Transactions',
+      name: 'filteredTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Expense`
   String get categoriesScreenTabBarTextExpense {
     return Intl.message(
@@ -173,49 +255,36 @@ class S {
     );
   }
 
-  /// `{category, select, Automobile {Automobile} Awards {Awards} BabyCare {Baby Care} Bonus {Bonus} Books {Books} Charity {Charity} Clothing {Clothing} Drinks {Drinks} Education {Education} Electronics {Electronics} Entertainment {Entertainment} Food {Food} Freelance {Freelance} FriendsFamily {Friends & Family} Gifts {Gifts} Grants {Grants} Groceries {Groceries} Health {Health} Hobbies {Hobbies} Insurance {Insurance} Interest {Interest} Investments {Investments} Laundry {Laundry} Lottery {Lottery} Mobile {Mobile} Office {Office} Others {Others} Pets {Pets} Refunds {Refunds} Rent {Rent} Salary {Salary} Sale {Sale} SalonSpa {Salon & Spa} Shopping {Shopping} Tax {Tax} Transportation {Transportation} Travel {Travel} Utilities {Utilities} other {{category}}}`
+  /// `{category, select, Salary {salary}  Bonus {bonus} Gift {gift} Others {others}  Refund {refund} Refund_to {refund_to} Loan {loan} Offering {offering}                   Apartment {apartment} Support {support} School_fee {school_fee} Food {food} Laundry {laundry} Children {children} Transportation {transportation}         Dishes {dishes} Health {health} Beauty {beauty} Mobile {mobile}   Education {education} Furniture {furniture}   Clothes {clothes}  Loan_intereset {loan_intereset} Travel {travel} Pets {pets} other {{category}}}`
   String categoryName(Object category) {
     return Intl.select(
       category,
       {
-        'Automobile': 'Automobile',
-        'Awards': 'Awards',
-        'BabyCare': 'Baby Care',
-        'Bonus': 'Bonus',
-        'Books': 'Books',
-        'Charity': 'Charity',
-        'Clothing': 'Clothing',
-        'Drinks': 'Drinks',
-        'Education': 'Education',
-        'Electronics': 'Electronics',
-        'Entertainment': 'Entertainment',
-        'Food': 'Food',
-        'Freelance': 'Freelance',
-        'FriendsFamily': 'Friends & Family',
-        'Gifts': 'Gifts',
-        'Grants': 'Grants',
-        'Groceries': 'Groceries',
-        'Health': 'Health',
-        'Hobbies': 'Hobbies',
-        'Insurance': 'Insurance',
-        'Interest': 'Interest',
-        'Investments': 'Investments',
-        'Laundry': 'Laundry',
-        'Lottery': 'Lottery',
-        'Mobile': 'Mobile',
-        'Office': 'Office',
-        'Others': 'Others',
-        'Pets': 'Pets',
-        'Refunds': 'Refunds',
-        'Rent': 'Rent',
-        'Salary': 'Salary',
-        'Sale': 'Sale',
-        'SalonSpa': 'Salon & Spa',
-        'Shopping': 'Shopping',
-        'Tax': 'Tax',
-        'Transportation': 'Transportation',
-        'Travel': 'Travel',
-        'Utilities': 'Utilities',
+        'Salary': 'salary',
+        'Bonus': 'bonus',
+        'Gift': 'gift',
+        'Others': 'others',
+        'Refund': 'refund',
+        'Refund_to': 'refund_to',
+        'Loan': 'loan',
+        'Offering': 'offering',
+        'Apartment': 'apartment',
+        'Support': 'support',
+        'School_fee': 'school_fee',
+        'Food': 'food',
+        'Laundry': 'laundry',
+        'Children': 'children',
+        'Transportation': 'transportation',
+        'Dishes': 'dishes',
+        'Health': 'health',
+        'Beauty': 'beauty',
+        'Mobile': 'mobile',
+        'Education': 'education',
+        'Furniture': 'furniture',
+        'Clothes': 'clothes',
+        'Loan_intereset': 'loan_intereset',
+        'Travel': 'travel',
+        'Pets': 'pets',
         'other': '$category',
       },
       name: 'categoryName',
@@ -224,10 +293,60 @@ class S {
     );
   }
 
-  /// `Мөнгөн тэмдэгтүүд`
+  /// `Home`
+  String get textNavHome {
+    return Intl.message(
+      'Home',
+      name: 'textNavHome',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filter`
+  String get textNavFilter {
+    return Intl.message(
+      'Filter',
+      name: 'textNavFilter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transaction`
+  String get textNavTransaction {
+    return Intl.message(
+      'Transaction',
+      name: 'textNavTransaction',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Wallet`
+  String get textNavWallet {
+    return Intl.message(
+      'Wallet',
+      name: 'textNavWallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get textNavSettings {
+    return Intl.message(
+      'Settings',
+      name: 'textNavSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Currency`
   String get currenciesScreenAppBarTitle {
     return Intl.message(
-      'Мөнгөн тэмдэгтүүд',
+      'Currency',
       name: 'currenciesScreenAppBarTitle',
       desc: '',
       args: [],
@@ -314,306 +433,6 @@ class S {
     );
   }
 
-  /// `DOWNLOAD`
-  String get exportBottomSheetButtonTextDownload {
-    return Intl.message(
-      'DOWNLOAD',
-      name: 'exportBottomSheetButtonTextDownload',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `EXPORT`
-  String get exportBottomSheetButtonTextExport {
-    return Intl.message(
-      'EXPORT',
-      name: 'exportBottomSheetButtonTextExport',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Export to CSV/JSON`
-  String get exportBottomSheetHeadingText {
-    return Intl.message(
-      'Export to CSV/JSON',
-      name: 'exportBottomSheetHeadingText',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `End date`
-  String get exportBottomSheetLabelTextEndDate {
-    return Intl.message(
-      'End date',
-      name: 'exportBottomSheetLabelTextEndDate',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Start date`
-  String get exportBottomSheetLabelTextStartDate {
-    return Intl.message(
-      'Start date',
-      name: 'exportBottomSheetLabelTextStartDate',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `The start time must be before the end time`
-  String get exportBottomSheetTextDateValidationError {
-    return Intl.message(
-      'The start time must be before the end time',
-      name: 'exportBottomSheetTextDateValidationError',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Click on the + icon to add income / expenses`
-  String get homeDailyNoTransactionsTextSubtitle {
-    return Intl.message(
-      'Click on the + icon to add income / expenses',
-      name: 'homeDailyNoTransactionsTextSubtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `This list is empty...`
-  String get homeDailyNoTransactionsTextTitle {
-    return Intl.message(
-      'This list is empty...',
-      name: 'homeDailyNoTransactionsTextTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Sign-in with Google`
-  String get loginButtonTextGoogle {
-    return Intl.message(
-      'Sign-in with Google',
-      name: 'loginButtonTextGoogle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Guest login`
-  String get loginButtonTextGuest {
-    return Intl.message(
-      'Guest login',
-      name: 'loginButtonTextGuest',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `This app is designed to help you keep track of your daily financial income and expenses.`
-  String get loginTextTagline {
-    return Intl.message(
-      'This app is designed to help you keep track of your daily financial income and expenses.',
-      name: 'loginTextTagline',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `NEXT`
-  String get profileSetupButtonTextNext {
-    return Intl.message(
-      'NEXT',
-      name: 'profileSetupButtonTextNext',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Email address`
-  String get profileSetupLabelTextEmailAddress {
-    return Intl.message(
-      'Email address',
-      name: 'profileSetupLabelTextEmailAddress',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Full name`
-  String get profileSetupLabelTextFullName {
-    return Intl.message(
-      'Full name',
-      name: 'profileSetupLabelTextFullName',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please fill in your name and email address`
-  String get profileSetupTextHeadline {
-    return Intl.message(
-      'Please fill in your name and email address',
-      name: 'profileSetupTextHeadline',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Register`
-  String get settingsScreenHeaderTitleAccount {
-    return Intl.message(
-      'Register',
-      name: 'settingsScreenHeaderTitleAccount',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Danger zone`
-  String get settingsScreenHeaderTitleDangerZone {
-    return Intl.message(
-      'Danger zone',
-      name: 'settingsScreenHeaderTitleDangerZone',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Settings`
-  String get settingsScreenHeaderTitlePreferences {
-    return Intl.message(
-      'Settings',
-      name: 'settingsScreenHeaderTitlePreferences',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Theme color`
-  String get settingsScreenSettingTitleAccentColor {
-    return Intl.message(
-      'Theme color',
-      name: 'settingsScreenSettingTitleAccentColor',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Fingerprint / face login`
-  String get settingsScreenSettingTitleBiometric {
-    return Intl.message(
-      'Fingerprint / face login',
-      name: 'settingsScreenSettingTitleBiometric',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `You will be logged in with your fingerprint and / or face each time you open the app.`
-  String get settingsScreenSettingTitleBiometricDescription {
-    return Intl.message(
-      'You will be logged in with your fingerprint and / or face each time you open the app.',
-      name: 'settingsScreenSettingTitleBiometricDescription',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Currency`
-  String get settingsScreenSettingTitleCurrency {
-    return Intl.message(
-      'Currency',
-      name: 'settingsScreenSettingTitleCurrency',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Delete your account`
-  String get settingsScreenSettingTitleDeleteAccount {
-    return Intl.message(
-      'Delete your account',
-      name: 'settingsScreenSettingTitleDeleteAccount',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Email address`
-  String get settingsScreenSettingTitleEmailAddress {
-    return Intl.message(
-      'Email address',
-      name: 'settingsScreenSettingTitleEmailAddress',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Language`
-  String get settingsScreenSettingTitleLanguage {
-    return Intl.message(
-      'Language',
-      name: 'settingsScreenSettingTitleLanguage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Full name`
-  String get settingsScreenSettingTitleName {
-    return Intl.message(
-      'Full name',
-      name: 'settingsScreenSettingTitleName',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Theme mode`
-  String get settingsScreenSettingTitleTheme {
-    return Intl.message(
-      'Theme mode',
-      name: 'settingsScreenSettingTitleTheme',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `AMOLED mode`
-  String get settingsScreenSettingTitleThemeAMOLED {
-    return Intl.message(
-      'AMOLED mode',
-      name: 'settingsScreenSettingTitleThemeAMOLED',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Dark mode`
-  String get settingsScreenSettingTitleThemeDark {
-    return Intl.message(
-      'Dark mode',
-      name: 'settingsScreenSettingTitleThemeDark',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Light mode`
-  String get settingsScreenSettingTitleThemeLight {
-    return Intl.message(
-      'Light mode',
-      name: 'settingsScreenSettingTitleThemeLight',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `This app is designed to help you keep track of your daily financial income and expenses.`
   String get expenseManagerDrawerMessageShare {
     return Intl.message(
@@ -634,20 +453,20 @@ class S {
     );
   }
 
-  /// `Нэмэлт мэдээлэл бббббббб`
+  /// `Additional info`
   String get expenseManagerDrawerTextAboutAppLegalese {
     return Intl.message(
-      'Нэмэлт мэдээлэл бббббббб',
+      'Additional info',
       name: 'expenseManagerDrawerTextAboutAppLegalese',
       desc: '',
       args: [],
     );
   }
 
-  /// `бас нэмэлт мэдээлэл йййййй!`
+  /// `Additional Info`
   String get expenseManagerDrawerTextAboutFooter {
     return Intl.message(
-      'бас нэмэлт мэдээлэл йййййй!',
+      'Additional Info',
       name: 'expenseManagerDrawerTextAboutFooter',
       desc: '',
       args: [],
@@ -744,6 +563,556 @@ class S {
     );
   }
 
+  /// `DOWNLOAD`
+  String get exportBottomSheetButtonTextDownload {
+    return Intl.message(
+      'DOWNLOAD',
+      name: 'exportBottomSheetButtonTextDownload',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `EXPORT`
+  String get exportBottomSheetButtonTextExport {
+    return Intl.message(
+      'EXPORT',
+      name: 'exportBottomSheetButtonTextExport',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Export to CSV/JSON`
+  String get exportBottomSheetHeadingText {
+    return Intl.message(
+      'Export to CSV/JSON',
+      name: 'exportBottomSheetHeadingText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `End date`
+  String get exportBottomSheetLabelTextEndDate {
+    return Intl.message(
+      'End date',
+      name: 'exportBottomSheetLabelTextEndDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start date`
+  String get exportBottomSheetLabelTextStartDate {
+    return Intl.message(
+      'Start date',
+      name: 'exportBottomSheetLabelTextStartDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The start time must be before the end time`
+  String get exportBottomSheetTextDateValidationError {
+    return Intl.message(
+      'The start time must be before the end time',
+      name: 'exportBottomSheetTextDateValidationError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Filter`
+  String get filterTitle {
+    return Intl.message(
+      'Filter',
+      name: 'filterTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Transfer`
+  String get filterTransfer {
+    return Intl.message(
+      'Transfer',
+      name: 'filterTransfer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account`
+  String get filterTransferAccount {
+    return Intl.message(
+      'Account',
+      name: 'filterTransferAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click on the + icon to add income / expenses`
+  String get homeDailyNoTransactionsTextSubtitle {
+    return Intl.message(
+      'Click on the + icon to add income / expenses',
+      name: 'homeDailyNoTransactionsTextSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you have created an account`
+  String get homeDailyNoTransactionsTextTitle {
+    return Intl.message(
+      'If you have created an account',
+      name: 'homeDailyNoTransactionsTextTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign-in with Google`
+  String get loginButtonTextGoogle {
+    return Intl.message(
+      'Sign-in with Google',
+      name: 'loginButtonTextGoogle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Guest login`
+  String get loginButtonTextGuest {
+    return Intl.message(
+      'Guest login',
+      name: 'loginButtonTextGuest',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This app is designed to help you keep track of your daily financial income and expenses.`
+  String get loginTextTagline {
+    return Intl.message(
+      'This app is designed to help you keep track of your daily financial income and expenses.',
+      name: 'loginTextTagline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `NEXT`
+  String get profileSetupButtonTextNext {
+    return Intl.message(
+      'NEXT',
+      name: 'profileSetupButtonTextNext',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email address`
+  String get profileSetupLabelTextEmailAddress {
+    return Intl.message(
+      'Email address',
+      name: 'profileSetupLabelTextEmailAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full name`
+  String get profileSetupLabelTextFullName {
+    return Intl.message(
+      'Full name',
+      name: 'profileSetupLabelTextFullName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill in your name and email address`
+  String get profileSetupTextHeadline {
+    return Intl.message(
+      'Please fill in your name and email address',
+      name: 'profileSetupTextHeadline',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose date`
+  String get reminderBottomSheetchooseDate {
+    return Intl.message(
+      'Choose date',
+      name: 'reminderBottomSheetchooseDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date`
+  String get reminderBottomSheetTextDate {
+    return Intl.message(
+      'Date',
+      name: 'reminderBottomSheetTextDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Repeat`
+  String get reminderBottomSheetTextRepeat {
+    return Intl.message(
+      'Repeat',
+      name: 'reminderBottomSheetTextRepeat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Day repeat`
+  String get reminderBottomSheetTextRepeatDay {
+    return Intl.message(
+      'Day repeat',
+      name: 'reminderBottomSheetTextRepeatDay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Frequency of days`
+  String get reminderBottomSheetTextRepeatDay2 {
+    return Intl.message(
+      'Frequency of days',
+      name: 'reminderBottomSheetTextRepeatDay2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Title`
+  String get reminderBottomSheetTextTittle {
+    return Intl.message(
+      'Title',
+      name: 'reminderBottomSheetTextTittle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminder deleted`
+  String get reminderDeleted {
+    return Intl.message(
+      'Reminder deleted',
+      name: 'reminderDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Undo`
+  String get reminderDeletedUndo {
+    return Intl.message(
+      'Undo',
+      name: 'reminderDeletedUndo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `minute`
+  String get reminderMinute {
+    return Intl.message(
+      'minute',
+      name: 'reminderMinute',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get reminderSave {
+    return Intl.message(
+      'Save',
+      name: 'reminderSave',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Selected date: `
+  String get reminderSelectedDate {
+    return Intl.message(
+      'Selected date: ',
+      name: 'reminderSelectedDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Selected time: `
+  String get reminderSelectedTime {
+    return Intl.message(
+      'Selected time: ',
+      name: 'reminderSelectedTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Time`
+  String get reminderSelectTime {
+    return Intl.message(
+      'Time',
+      name: 'reminderSelectTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settingsAppBar {
+    return Intl.message(
+      'Settings',
+      name: 'settingsAppBar',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Budget`
+  String get settingsBudgetPreferences {
+    return Intl.message(
+      'Budget',
+      name: 'settingsBudgetPreferences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General`
+  String get settingsGeneralPreferences {
+    return Intl.message(
+      'General',
+      name: 'settingsGeneralPreferences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit profile`
+  String get settingsProfilePreferences {
+    return Intl.message(
+      'Edit profile',
+      name: 'settingsProfilePreferences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reminder`
+  String get settingsReminderPreferences {
+    return Intl.message(
+      'Reminder',
+      name: 'settingsReminderPreferences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `General`
+  String get settingsScreenGeneral_TitlePreferences {
+    return Intl.message(
+      'General',
+      name: 'settingsScreenGeneral_TitlePreferences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Register`
+  String get settingsScreenHeaderTitleAccount {
+    return Intl.message(
+      'Register',
+      name: 'settingsScreenHeaderTitleAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Danger zone`
+  String get settingsScreenHeaderTitleDangerZone {
+    return Intl.message(
+      'Danger zone',
+      name: 'settingsScreenHeaderTitleDangerZone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settingsScreenHeaderTitlePreferences {
+    return Intl.message(
+      'Settings',
+      name: 'settingsScreenHeaderTitlePreferences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Theme color`
+  String get settingsScreenSettingTitleAccentColor {
+    return Intl.message(
+      'Theme color',
+      name: 'settingsScreenSettingTitleAccentColor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fingerprint / face login`
+  String get settingsScreenSettingTitleBiometric {
+    return Intl.message(
+      'Fingerprint / face login',
+      name: 'settingsScreenSettingTitleBiometric',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You will be logged in with your fingerprint and / or face each time you open the app.`
+  String get settingsScreenSettingTitleBiometricDescription {
+    return Intl.message(
+      'You will be logged in with your fingerprint and / or face each time you open the app.',
+      name: 'settingsScreenSettingTitleBiometricDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Currency`
+  String get settingsScreenSettingTitleCurrency {
+    return Intl.message(
+      'Currency',
+      name: 'settingsScreenSettingTitleCurrency',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete your account`
+  String get settingsScreenSettingTitleDeleteAccount {
+    return Intl.message(
+      'Delete your account',
+      name: 'settingsScreenSettingTitleDeleteAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email address`
+  String get settingsScreenSettingTitleEmailAddress {
+    return Intl.message(
+      'Email address',
+      name: 'settingsScreenSettingTitleEmailAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change language`
+  String get settingsScreenSettingTitleLanguage {
+    return Intl.message(
+      'Change language',
+      name: 'settingsScreenSettingTitleLanguage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full name`
+  String get settingsScreenSettingTitleName {
+    return Intl.message(
+      'Full name',
+      name: 'settingsScreenSettingTitleName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Theme mode`
+  String get settingsScreenSettingTitleTheme {
+    return Intl.message(
+      'Theme mode',
+      name: 'settingsScreenSettingTitleTheme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `AMOLED mode`
+  String get settingsScreenSettingTitleThemeAMOLED {
+    return Intl.message(
+      'AMOLED mode',
+      name: 'settingsScreenSettingTitleThemeAMOLED',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark mode`
+  String get settingsScreenSettingTitleThemeDark {
+    return Intl.message(
+      'Dark mode',
+      name: 'settingsScreenSettingTitleThemeDark',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Light mode`
+  String get settingsScreenSettingTitleThemeLight {
+    return Intl.message(
+      'Light mode',
+      name: 'settingsScreenSettingTitleThemeLight',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose account`
+  String get transactionBottomSheetButtonChooseWallet {
+    return Intl.message(
+      'Choose account',
+      name: 'transactionBottomSheetButtonChooseWallet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `From`
+  String get transactionBottomSheetButtonTextAccountExpense {
+    return Intl.message(
+      'From',
+      name: 'transactionBottomSheetButtonTextAccountExpense',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To`
+  String get transactionBottomSheetButtonTextAccountIncome {
+    return Intl.message(
+      'To',
+      name: 'transactionBottomSheetButtonTextAccountIncome',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `ADD`
   String get transactionBottomSheetButtonTextAdd {
     return Intl.message(
@@ -784,21 +1153,11 @@ class S {
     );
   }
 
-  /// `Amount`
+  /// `Possible balance`
   String get transactionBottomSheetLabelTextAmount {
     return Intl.message(
-      'Amount',
+      'Possible balance',
       name: 'transactionBottomSheetLabelTextAmount',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Дансны дугаар`
-  String get walletBottomSheetLabelTextAmount {
-    return Intl.message(
-      'Дансны дугаар',
-      name: 'walletBottomSheetLabelTextAmount',
       desc: '',
       args: [],
     );
@@ -814,10 +1173,10 @@ class S {
     );
   }
 
-  /// `Decsription (optional)`
+  /// `Description (optional)`
   String get transactionBottomSheetLabelTextDescription {
     return Intl.message(
-      'Decsription (optional)',
+      'Description (optional)',
       name: 'transactionBottomSheetLabelTextDescription',
       desc: '',
       args: [],
@@ -834,31 +1193,21 @@ class S {
     );
   }
 
-  /// `New Wallet`
-  String get walletBottomSheetTextHeadingAdd {
-    return Intl.message(
-      'New Wallet',
-      name: 'walletBottomSheetTextHeadingAdd',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Update Wallet`
-  String get walletBottomSheetTextHeadingUpdate {
-    return Intl.message(
-      'Update Wallet',
-      name: 'walletBottomSheetTextHeadingUpdate',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Transaction renewal`
   String get transactionBottomSheetTextHeadingUpdate {
     return Intl.message(
       'Transaction renewal',
       name: 'transactionBottomSheetTextHeadingUpdate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Amount`
+  String get transactionBottomTextAmount {
+    return Intl.message(
+      'Amount',
+      name: 'transactionBottomTextAmount',
       desc: '',
       args: [],
     );
@@ -901,6 +1250,146 @@ class S {
     return Intl.message(
       'YOUR BUDGET',
       name: 'updateBudgetBottomSheetLabelTextBudget',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get walletBottomSheetLabelDescription {
+    return Intl.message(
+      'Description',
+      name: 'walletBottomSheetLabelDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Account number`
+  String get walletBottomSheetLabelTextAmount {
+    return Intl.message(
+      'Account number',
+      name: 'walletBottomSheetLabelTextAmount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bank account`
+  String get walletBottomSheetLabelTextBankAccount {
+    return Intl.message(
+      'Bank account',
+      name: 'walletBottomSheetLabelTextBankAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash`
+  String get walletBottomSheetLabelTextCash {
+    return Intl.message(
+      'Cash',
+      name: 'walletBottomSheetLabelTextCash',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bank name\n`
+  String get walletBottomSheetLabelTextDescription {
+    return Intl.message(
+      'Bank name\n',
+      name: 'walletBottomSheetLabelTextDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loan`
+  String get walletBottomSheetLabelTextLoanAccount {
+    return Intl.message(
+      'Loan',
+      name: 'walletBottomSheetLabelTextLoanAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saving`
+  String get walletBottomSheetLabelTextSaving {
+    return Intl.message(
+      'Saving',
+      name: 'walletBottomSheetLabelTextSaving',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Wallet`
+  String get walletBottomSheetTextHeadingAdd {
+    return Intl.message(
+      'New Wallet',
+      name: 'walletBottomSheetTextHeadingAdd',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update Wallet`
+  String get walletBottomSheetTextHeadingUpdate {
+    return Intl.message(
+      'Update Wallet',
+      name: 'walletBottomSheetTextHeadingUpdate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type`
+  String get walletBottomSheetType {
+    return Intl.message(
+      'Type',
+      name: 'walletBottomSheetType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click + to create your account`
+  String get walletEmptySubText {
+    return Intl.message(
+      'Click + to create your account',
+      name: 'walletEmptySubText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You do not have an account`
+  String get walletEmptyText {
+    return Intl.message(
+      'You do not have an account',
+      name: 'walletEmptyText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add your new card click the \n + \n button in the bottom right`
+  String get walletSectionEmptyText {
+    return Intl.message(
+      'Add your new card click the \n + \n button in the bottom right',
+      name: 'walletSectionEmptyText',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Accounts`
+  String get walletTitle {
+    return Intl.message(
+      'Accounts',
+      name: 'walletTitle',
       desc: '',
       args: [],
     );

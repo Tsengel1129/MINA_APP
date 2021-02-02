@@ -2,6 +2,7 @@ import 'package:expensemanager/generated/l10n.dart';
 import 'package:expensemanager/models/models.dart';
 import 'package:expensemanager/services/services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 class UpdateBudgetDialog extends StatefulWidget {
@@ -53,6 +54,9 @@ class _UpdateBudgetDialogState extends State<UpdateBudgetDialog> {
             TextField(
               controller: _budgetController,
               keyboardType: TextInputType.number,
+              inputFormatters: <TextInputFormatter>[
+                FilteringTextInputFormatter.allow(RegExp(r'[0-9]')),
+              ],
               decoration: InputDecoration(
                 labelText: S.of(context).updateBudgetBottomSheetLabelTextBudget,
               ),

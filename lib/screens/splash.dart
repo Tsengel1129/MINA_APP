@@ -1,3 +1,4 @@
+import 'package:expensemanager/screens/login/onboarding.dart';
 import 'package:provider/provider.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:after_layout/after_layout.dart';
@@ -32,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen>
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     int theme = prefs.getInt('theme') ?? 0;
-    String appLang = prefs.getString('appLang') ?? 'en';
+    String appLang = prefs.getString('appLang') ?? 'mn';
     int color = prefs.getInt('accentColor') ?? expenseManagerBlue.value;
     bool biometricsEnabled = prefs.getBool('biometricsEnabled') ?? false;
 
@@ -66,7 +67,7 @@ class _SplashScreenState extends State<SplashScreen>
         if (user != null) {
           Navigator.pushReplacementNamed(context, HomeScreen.routeName);
         } else {
-          Navigator.pushReplacementNamed(context, LoginScreen.routeName);
+          Navigator.pushReplacementNamed(context, OnBordingScreen.routeName);
         }
       } else {
         _scaffoldKey.currentState.showSnackBar(SnackBar(

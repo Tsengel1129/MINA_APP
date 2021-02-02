@@ -2,6 +2,7 @@ import 'package:expensemanager/config/utils.dart';
 import 'package:expensemanager/data/languages.dart';
 import 'package:expensemanager/generated/l10n.dart';
 import 'package:expensemanager/models/models.dart';
+import 'package:expensemanager/screens/categories/categories.dart';
 import 'package:expensemanager/screens/screens.dart';
 import 'package:expensemanager/services/services.dart';
 import 'package:expensemanager/shared/shared.dart';
@@ -35,27 +36,48 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
       ],
       child: Scaffold(
+        appBar: AppBar(
+          title: new Text(
+            S.of(context).settingsAppBar,
+            style: TextStyle(color: Colors.white),
+          ),
+          iconTheme: IconThemeData(color: Colors.white),
+          backgroundColor: Theme.of(context).accentColor,
+          centerTitle: true,
+        ),
         body: Consumer<User>(
           builder: (context, user, _) => SafeArea(
             child: ListView(
               children: <Widget>[
                 //ExpenseAppBar(canGoBack: true),
                 SizedBox(height: 20),
-                buildHeader(S.of(context).settingsScreenHeaderTitlePreferences),
-                buildAccentColorSelector(settings),
-                buildAppLanguageSelector(settings),
-                buildThemeSelector(settings),
-                buildBiometricsSwitch(settings),
+                buildHeader(S.of(context).settingsProfilePreferences),
                 Divider(),
-                buildHeader(S.of(context).settingsScreenHeaderTitlePreferences),
-                Divider(),
-                buildHeader(S.of(context).settingsScreenHeaderTitleAccount),
                 buildNameSetting(user),
                 buildEmailSetting(user),
-                buildCurrencySetting(user),
+                //buildCurrencySetting(user),
                 Divider(),
-                buildHeader(S.of(context).settingsScreenHeaderTitleDangerZone),
-                buildDeleteAccount(),
+                buildHeader(S.of(context).settingsGeneralPreferences),
+                Divider(),
+                buildCategoriesSelector(settings),
+                buildBudgetSelector(settings),
+                buildReminderSelector(settings),
+                Divider(),
+                buildHeader(
+                    S.of(context).settingsScreenGeneral_TitlePreferences),
+                Divider(),
+                buildAccentColorSelector(settings),
+                buildThemeSelector(settings),
+                buildAppLanguageSelector(settings),
+                buildBiometricsSwitch(settings),
+                //Divider(),
+                //buildHeader(S.of(context).settingsScreenHeaderTitlePreferences),
+                //Divider(),
+                //buildHeader(S.of(context).settingsScreenHeaderTitleAccount),
+                //Divider(),
+                //buildHeader(S.of(context).settingsScreenHeaderTitleDangerZone),
+                //Divider(),
+                //buildDeleteAccount(),
                 logOut()
               ],
             ),
@@ -69,11 +91,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
     AuthService authService = AuthService();
     Navigator.pop(context);
     authService.signOut();
-    Navigator.pushNamedAndRemoveUntil(
-      context,
-      LoginScreen.routeName,
-      (route) => false,
-    );
+    Navigator.push(context,
+        MaterialPageRoute(builder: (BuildContext context) => LoginScreen()));
   }
 
   ListTile buildNameSetting(User user) {
@@ -130,7 +149,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  ListTile buildCurrencySetting(User user) {
+  /*ListTile buildCurrencySetting(User user) {
     return ListTile(
       leading: Icon(
         Icons.monetization_on,
@@ -157,7 +176,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         );
       },
     );
-  }
+  }*/
 
   Padding buildHeader(String title) {
     return Padding(
@@ -177,7 +196,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  ListTile buildDeleteAccount() {
+  /*ListTile buildDeleteAccount() {
     return ListTile(
       leading: Icon(
         Icons.delete_sweep,
@@ -231,16 +250,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
         );
       },
     );
-  }
+  }*/
 
   ListTile logOut() {
     return ListTile(
       onTap: () => logout(context),
-      leading: Icon(Icons.exit_to_app, color: Theme.of(context).accentColor),
+      leading: Icon(
+        Icons.exit_to_app,
+        color: Colors.red[800],
+      ),
       title: Text(
         S.of(context).expenseManagerDrawerTextLogout,
         style: TextStyle(
           fontWeight: FontWeight.w500,
+          color: Colors.red[800],
         ),
       ),
     );
@@ -289,6 +312,25 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
+  ListTile buildBudgetSelector(SettingsProvider settings) {
+    return ListTile(
+      leading: Icon(
+        Icons.graphic_eq,
+        color: Theme.of(context).accentColor,
+      ),
+      title: Text(
+        S.of(context).settingsBudgetPreferences,
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      onTap: () {
+        // Navigator.pop(context);
+        Navigator.pushNamed(context, BudgetScreen.routeName);
+      },
+    );
+  }
+
   ListTile buildThemeSelector(SettingsProvider settings) {
     return ListTile(
       leading: Icon(
@@ -322,6 +364,46 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         ],
       ),
+    );
+  }
+
+  ListTile buildReminderSelector(SettingsProvider settings) {
+    return ListTile(
+      leading: Icon(
+        Icons.notifications,
+        color: Theme.of(context).accentColor,
+      ),
+      title: Text(
+        S.of(context).settingsReminderPreferences,
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => MyHomePage()),
+        );
+      },
+    );
+  }
+
+  ListTile buildCategoriesSelector(SettingsProvider settings) {
+    return ListTile(
+      leading: Icon(
+        Icons.category,
+        color: Theme.of(context).accentColor,
+      ),
+      title: Text(
+        S.of(context).categoriesScreenAppBarTitle,
+        style: TextStyle(
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      onTap: () {
+        // Navigator.pop(context);
+        Navigator.pushNamed(context, CategoriesScreen.routeName);
+      },
     );
   }
 

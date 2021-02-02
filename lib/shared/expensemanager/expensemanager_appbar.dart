@@ -17,7 +17,6 @@ class ExpenseAppBar extends StatefulWidget {
   @override
   _ExpenseAppBarState createState() => _ExpenseAppBarState();
 }
-
 class _ExpenseAppBarState extends State<ExpenseAppBar> {
   @override
   Widget build(BuildContext context) {

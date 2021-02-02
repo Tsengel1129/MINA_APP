@@ -12,15 +12,16 @@ class User {
   final double budget;
   final String photoURL;
   final Currency currency;
+  final String defaultWallet;
 
-  User({
-    this.uid,
-    this.name,
-    this.email,
-    this.budget,
-    this.photoURL,
-    this.currency,
-  });
+  User(
+      {this.uid,
+      this.name,
+      this.email,
+      this.budget,
+      this.photoURL,
+      this.currency,
+      this.defaultWallet});
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
@@ -32,7 +33,7 @@ class User {
           budget: null,
           photoURL: user.photoUrl ?? '',
           currency: null,
-        )
+          defaultWallet: null)
       : null;
 
   Map<String, dynamic> toJson() => <String, dynamic>{
@@ -42,5 +43,6 @@ class User {
         'budget': this.budget,
         'photoURL': this.photoURL,
         'currency': this.currency?.toJson(),
+        'defaultWallet': this.defaultWallet
       };
 }

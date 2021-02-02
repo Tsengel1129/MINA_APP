@@ -90,11 +90,13 @@ class _ProfileSetupScreenState extends State<ProfileSetupScreen>
                     .updateUserName(_nameController.text);
                 await UserDatabaseService(user)
                     .updateUserEmail(_emailController.text);
+                await UserDatabaseService(user).updateUserCurrency(Currency(
+                  id: UniqueKey().toString(),
+                  name: 'Tugrik',
+                  symbol: "\₮",
+                ));
 
-                Navigator.pushReplacementNamed(
-                  context,
-                  CurrencySetupScreen.routeName,
-                );
+                Navigator.pushReplacementNamed(context, HomeScreen.routeName);
               },
             ),
           ),
